@@ -16,7 +16,7 @@ def get_mammography_data():
     train_labels = data.loc[:train_count - 1, label_col]
 
     test_attributes = data.loc[train_count:, attribute_cols]
-    test_labels = data.loc[train_count:, attribute_cols]
+    test_labels = data.loc[train_count:, label_col]
 
     return train_attributes, train_labels, test_attributes, test_labels
 
@@ -32,6 +32,6 @@ def get_happiness_data():
     train_labels = data.loc[:train_count - 1, label_col]
 
     test_attributes = data.loc[train_count:, attribute_cols]
-    test_labels = data.loc[train_count:, attribute_cols]
+    test_labels = data.loc[train_count:, label_col]
 
     return train_attributes, train_labels, test_attributes, test_labels
