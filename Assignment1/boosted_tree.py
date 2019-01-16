@@ -1,10 +1,10 @@
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import cross_val_score
 from utilities.data_fetcher import *
 
 def train(train_attributes, train_labels, impurity_threshold):
-    classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0, min_impurity_decrease = impurity_threshold)
-    classifier.fit(train_attributes, train_labels)
+    classifier = GradientBoostingClassifier(criterion = 'mse', random_state = 0, min_impurity_decrease = impurity_threshold)
+    classifier.fit(train_attributes, train_labels.values.ravel())
 
     return classifier
 
@@ -19,7 +19,7 @@ def run(train_attributes, train_labels, test_attributes, test_labels):
 
         classifier = train(train_attributes, train_labels, impurity_threshold)
 
-        cross_valid_score = cross_val_score(classifier, train_attributes, train_labels, cv = folds)
+        cross_valid_score = cross_val_score(classifier, train_attributes, train_labels.values.ravel(), cv = folds)
         print('cross val scores: ' + str(cross_valid_score))
         print('avg cross val score: ' + str(sum(cross_valid_score) / folds))
 
