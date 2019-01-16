@@ -2,7 +2,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import cross_val_score
 from utilities.data_fetcher import *
 
-def train(impurity_threshold):
+def train(train_attributes, train_labels, impurity_threshold):
     classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0, min_impurity_decrease = impurity_threshold)
     classifier.fit(train_attributes, train_labels)
 
@@ -17,7 +17,7 @@ def run(train_attributes, train_labels, test_attributes, test_labels):
     for impurity_threshold in impurity_thresholds:
         print('impurity threshold: ' + str(impurity_threshold))
 
-        classifier = train(impurity_threshold)
+        classifier = train(train_attributes, train_labels, impurity_threshold)
         print('node count: ' + str(classifier.tree_.node_count))
 
         cross_valid_score = cross_val_score(classifier, train_attributes, train_labels, cv = folds)
