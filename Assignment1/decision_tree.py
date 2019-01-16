@@ -31,10 +31,20 @@ def run(train_attributes, train_labels, test_attributes, test_labels):
 
         print('\n')
 
+train_percentages = [20, 40, 60, 80]
+
 print('-- MAMMOGRAPHY --')
-train_attributes, train_labels, test_attributes, test_labels = get_mammography_data()
-run(train_attributes, train_labels, test_attributes, test_labels)
+for train_percentage in train_percentages:
+        print('train percent: ' + str(train_percentage))
+        train_count, train_attributes, train_labels, test_attributes, test_labels = get_mammography_data(train_percentage)
+
+        print('train count: ' + str(train_count))
+        run(train_attributes, train_labels, test_attributes, test_labels)
 
 print('-- HAPPINESS --')
-train_attributes, train_labels, test_attributes, test_labels = get_happiness_data()
-run(train_attributes, train_labels, test_attributes, test_labels)
+for train_percentage in train_percentages:
+        print('train percent: ' + str(train_percentage))
+        train_count, train_attributes, train_labels, test_attributes, test_labels = get_happiness_data(train_percentage)
+
+        print('train count: ' + str(train_count))
+        run(train_attributes, train_labels, test_attributes, test_labels)
