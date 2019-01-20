@@ -9,7 +9,7 @@ def train(train_attributes, train_labels, impurity_threshold):
     return classifier
 
 def run(train_attributes, train_labels, test_attributes, test_labels):
-    impurity_thresholds = [0, 0.0001, 0.001, 0.01, 0.1]
+    impurity_thresholds = [0, 0.1, 0.2, 0.3, 0.4]
     folds = 4
 
     print('\n')
@@ -40,10 +40,10 @@ for train_percentage in train_percentages:
         print('train count: ' + str(train_count))
         run(train_attributes, train_labels, test_attributes, test_labels)
 
-print('-- HAPPINESS --')
+print('-- SKIN --')
 for train_percentage in train_percentages:
         print('train percent: ' + str(train_percentage))
-        train_count, train_attributes, train_labels, test_attributes, test_labels = get_happiness_data(train_percentage)
+        train_count, train_attributes, train_labels, test_attributes, test_labels = get_skin_data(train_percentage)
 
         print('train count: ' + str(train_count))
         run(train_attributes, train_labels, test_attributes, test_labels)
