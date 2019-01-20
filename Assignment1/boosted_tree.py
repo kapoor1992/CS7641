@@ -1,9 +1,11 @@
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import AdaBoostClassifier
 from sklearn.model_selection import cross_val_score
 from utilities.data_fetcher import *
 
 def train(train_attributes, train_labels, impurity_threshold):
-    classifier = GradientBoostingClassifier(criterion = 'mse', random_state = 0, min_impurity_decrease = impurity_threshold)
+    base_classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0, min_impurity_decrease = impurity_threshold)
+    classifier = AdaBoostClassifier(base_estimator = base_classifier, random_state = 0)
     classifier.fit(train_attributes, train_labels.values.ravel())
 
     return classifier
