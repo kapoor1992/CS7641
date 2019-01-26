@@ -11,7 +11,7 @@ def train(train_attributes, train_labels, iterations, in_kernel):
     return classifier
 
 def run(train_attributes, train_labels, test_attributes, test_labels):
-    iterations_list = [1, 5, 10, 15]
+    iterations_list = [1, 100]
     kernels = ['linear', 'poly']
     folds = 4
 
