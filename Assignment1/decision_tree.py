@@ -9,7 +9,7 @@ def train(train_attributes, train_labels, impurity_threshold):
     return classifier
 
 def run(train_attributes, train_labels, test_attributes, test_labels):
-    impurity_thresholds = [0, 0.1, 0.2, 0.3, 0.4]
+    impurity_thresholds = [0, 0.1, 0.2, 0.4]
     folds = 4
 
     print('\n')
