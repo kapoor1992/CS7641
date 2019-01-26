@@ -5,14 +5,14 @@ from utilities.data_fetcher import *
 from warnings import filterwarnings
 
 def train(train_attributes, train_labels, iterations, in_kernel):
-    classifier = SVC(random_state = 0, gamma = 'auto', max_iter = iterations, kernel = in_kernel)
+    classifier = SVC(random_state = 0, gamma = 'auto', degree = 2, max_iter = iterations, kernel = in_kernel)
     classifier.fit(train_attributes, train_labels.values.ravel())
 
     return classifier
 
 def run(train_attributes, train_labels, test_attributes, test_labels):
     iterations_list = [1, 10, 100, 200]
-    kernels = ['linear']
+    kernels = ['linear', 'poly']
     folds = 4
 
     print('\n')
