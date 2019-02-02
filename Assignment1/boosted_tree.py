@@ -20,6 +20,7 @@ def run(train_attributes, train_labels, test_attributes, test_labels):
         print('impurity threshold: ' + str(impurity_threshold))
 
         classifier = train(train_attributes, train_labels, impurity_threshold)
+        print('training score: ' + str(classifier.score(train_attributes, train_labels)))
 
         cross_valid_score = cross_val_score(classifier, train_attributes, train_labels.values.ravel(), cv = folds)
         print('cross val scores: ' + str(cross_valid_score))
