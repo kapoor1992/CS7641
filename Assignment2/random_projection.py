@@ -41,7 +41,7 @@ def run_skin():
     X = scale(train_attributes)
     y = pd.DataFrame(train_labels)
 
-    grp=GaussianRandomProjection(n_components=3, random_state=0)
+    grp=GaussianRandomProjection(n_components=2, random_state=0)
     grp.fit(scaled_data)
     x_grp=grp.transform(scaled_data)
 

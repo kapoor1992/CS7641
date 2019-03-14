@@ -1,4 +1,4 @@
-from sklearn.decomposition import FastICA
+from sklearn.decomposition import LatentDirichletAllocation
 from utilities.data_fetcher import *
 from sklearn.preprocessing import scale
 from sklearn.exceptions import DataConversionWarning
@@ -20,19 +20,19 @@ def run_mamm():
     X = scale(train_attributes)
     y = pd.DataFrame(train_labels)
 
-    ica=FastICA(n_components=2, random_state=0)
-    ica.fit(scaled_data)
-    x_ica=ica.transform(scaled_data)
+    lda=LatentDirichletAllocation(n_components=2, random_state=0)
+    lda.fit(df)
+    x_lda=lda.transform(df)
 
     color_theme = np.array(['magenta', 'brown'])
-    plt.title('Mammography ICA')
+    plt.title('Mammography Latent Dirichlet Allocation')
     plt.xlabel('Variable 1')
     plt.ylabel('Variable 2')
-    plt.scatter(x_ica[:,0],x_ica[:,1], c=color_theme[train_labels.values[:,0]],s=5)
+    plt.scatter(x_lda[:,0],x_lda[:,1], c=color_theme[train_labels.values[:,0]],s=5)
     plt.show()
 
 def run_skin():
-    train_count, train_attributes, train_labels, test_attributes, test_labels = get_skin_data(100)
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_skin_data(1)
     df = pd.DataFrame(train_attributes)
     scaler=StandardScaler()
     scaler.fit(df)
@@ -41,15 +41,15 @@ def run_skin():
     X = scale(train_attributes)
     y = pd.DataFrame(train_labels)
 
-    ica=FastICA(n_components=2, random_state=0)
-    ica.fit(scaled_data)
-    x_ica=ica.transform(scaled_data)
+    lda=LatentDirichletAllocation(n_components=2, random_state=0)
+    lda.fit(df)
+    x_lda=lda.transform(df)
 
     color_theme = np.array(['magenta', 'brown'])
-    plt.title('Skin ICA')
+    plt.title('Skin Latent Dirichlet Allocation')
     plt.xlabel('Variable 1')
     plt.ylabel('Variable 2')
-    plt.scatter(x_ica[:,0],x_ica[:,1], c=color_theme[train_labels.values[:,0]],s=5)
+    plt.scatter(x_lda[:,0],x_lda[:,1], c=color_theme[train_labels.values[:,0]],s=5)
     plt.show()
 
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
