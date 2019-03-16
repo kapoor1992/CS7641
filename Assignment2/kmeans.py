@@ -13,7 +13,7 @@ def run(dataset):
     else:
         train_count, X, y, test_attributes, test_labels = get_skin_data(10)
 
-    range_n_clusters = [2, 3, 4, 5, 6]
+    range_n_clusters = [2, 3, 4, 5, 6, 7]
 
     for n_clusters in range_n_clusters:
         fig, ax1 = plt.subplots(1, 1)

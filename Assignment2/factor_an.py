@@ -8,26 +8,26 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
+from sklearn.decomposition import FactorAnalysis
 
 def run_mamm():
     tc, X_train, X_test, y_train, y_test = get_mammography_data(100)
     sc = StandardScaler()  
     X_train = sc.fit_transform(X_train)
 
-    pca = PCA()  
-    X_train = pca.fit_transform(X_train)  
+    fa = FactorAnalysis(random_state=0)  
+    X_train = fa.fit_transform(X_train)  
 
     labels = {'1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15'}
     y_pos = np.arange(1, 16)
-    vars = pca.explained_variance_ratio_
+    vars = fa.noise_variance_
 
     print(vars)
 
     plt.bar(y_pos, vars, align='center', alpha=0.5)
-    plt.title('Mammography PCA')
-    plt.ylabel('Explained Variance')
-    plt.xlabel('Principal Component')
+    plt.title('Mammography FA')
+    plt.ylabel('Noise Variance')
+    plt.xlabel('Factor Component')
     plt.xticks(np.arange(1, 16, 1))
     plt.show()
 
@@ -36,19 +36,19 @@ def run_skin():
     sc = StandardScaler()  
     X_train = sc.fit_transform(X_train)
 
-    pca = PCA()  
-    X_train = pca.fit_transform(X_train)  
+    fa = FactorAnalysis(random_state=0)  
+    X_train = fa.fit_transform(X_train)  
 
     labels = {'1', '2', '3'}
     y_pos = np.arange(1, 4)
-    vars = pca.explained_variance_ratio_
+    vars = fa.noise_variance_
 
     print(vars)
 
     plt.bar(y_pos, vars, align='center', alpha=0.5)
-    plt.title('Skin PCA')
-    plt.ylabel('Explained Variance')
-    plt.xlabel('Principal Component')
+    plt.title('Skin FA')
+    plt.ylabel('Noise Variance')
+    plt.xlabel('Factor Component')
     plt.xticks(np.arange(1, 4, 1))
     plt.show()
 

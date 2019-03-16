@@ -9,47 +9,55 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+import re
 
 def run_mamm():
-    train_count, train_attributes, train_labels, test_attributes, test_labels = get_mammography_data(100)
-    df = pd.DataFrame(train_attributes)
-    scaler=StandardScaler()
-    scaler.fit(df)
-    scaled_data=scaler.transform(df)
+    eps_vals = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    dimens = []
 
-    X = scale(train_attributes)
-    y = pd.DataFrame(train_labels)
+    for i in eps_vals:
+        tc, X_train, X_test, y_train, y_test = get_mammography_data(100)
+        grp = GaussianRandomProjection(random_state=0)
+        grp.set_params(eps=i)
+        sc = StandardScaler()
 
-    grp=GaussianRandomProjection(n_components=2, random_state=0)
-    grp.fit(scaled_data)
-    x_grp=grp.transform(scaled_data)
+        try:
+            X_train = grp.fit(X_train)
+        except ValueError as err: 
+            val = re.search('of(.*)which', str(err))
+            dimens.append(int(val.group(1)))
 
-    color_theme = np.array(['magenta', 'brown'])
+    print(dimens)
+
     plt.title('Mammography Random Projection')
-    plt.xlabel('Variable 1')
-    plt.ylabel('Variable 2')
-    plt.scatter(x_grp[:,0],x_grp[:,1], c=color_theme[train_labels.values[:,0]],s=5)
+    plt.xlabel('eps')
+    plt.ylabel('Required Dimensions')
+    plt.scatter(x=eps_vals,y=dimens)
     plt.show()
+    
 
 def run_skin():
-    train_count, train_attributes, train_labels, test_attributes, test_labels = get_skin_data(100)
-    df = pd.DataFrame(train_attributes)
-    scaler=StandardScaler()
-    scaler.fit(df)
-    scaled_data=scaler.transform(df)
+    eps_vals = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    dimens = []
 
-    X = scale(train_attributes)
-    y = pd.DataFrame(train_labels)
+    for i in eps_vals:
+        tc, X_train, X_test, y_train, y_test = get_skin_data(100)
+        grp = GaussianRandomProjection(random_state=0)
+        grp.set_params(eps=i)
+        sc = StandardScaler()
 
-    grp=GaussianRandomProjection(n_components=2, random_state=0)
-    grp.fit(scaled_data)
-    x_grp=grp.transform(scaled_data)
+        try:
+            X_train = grp.fit(X_train)
+        except ValueError as err: 
+            val = re.search('of(.*)which', str(err))
+            dimens.append(int(val.group(1)))
 
-    color_theme = np.array(['magenta', 'brown'])
+    print(dimens)
+
     plt.title('Skin Random Projection')
-    plt.xlabel('Variable 1')
-    plt.ylabel('Variable 2')
-    plt.scatter(x_grp[:,0],x_grp[:,1], c=color_theme[train_labels.values[:,0]],s=5)
+    plt.xlabel('eps')
+    plt.ylabel('Required Dimensions')
+    plt.scatter(x=eps_vals,y=dimens)
     plt.show()
 
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
