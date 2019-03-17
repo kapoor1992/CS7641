@@ -66,13 +66,19 @@ def get_mamm(train_percentage=100):
     tc, X_train, X_test, y_train, y_test = get_mammography_data(train_percentage)
     sc = StandardScaler()  
     X_train = sc.fit_transform(X_train)
-    y_train = sc.fit_transform(y_train)
+    try:
+        y_train = sc.fit_transform(y_train)
+    except:
+        pass
 
     grp = GaussianRandomProjection(n_components=14, random_state=0)  
     X_train = grp.fit_transform(X_train)
 
-    grp2 = GaussianRandomProjection(n_components=14, random_state=0)  
-    y_train = grp2.fit_transform(y_train)
+    try:
+        grp2 = GaussianRandomProjection(n_components=14, random_state=0)  
+        y_train = grp2.fit_transform(y_train)
+    except:
+        pass
 
     return tc, X_train, X_test, y_train, y_test
 

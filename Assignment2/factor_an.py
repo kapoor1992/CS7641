@@ -56,13 +56,19 @@ def get_mamm(train_percentage=100):
     tc, X_train, X_test, y_train, y_test = get_mammography_data(train_percentage)
     sc = StandardScaler()  
     X_train = sc.fit_transform(X_train)
-    y_train = sc.fit_transform(y_train)
+    try:
+        y_train = sc.fit_transform(y_train)
+    except:
+        pass
 
     fa = FactorAnalysis(n_components=5, random_state=0)  
     X_train = fa.fit_transform(X_train)
 
-    fa2 = FactorAnalysis(n_components=5, random_state=0)  
-    y_train = fa2.fit_transform(y_train)
+    try:
+        fa2 = FactorAnalysis(n_components=5, random_state=0)  
+        y_train = fa2.fit_transform(y_train)
+    except:
+        pass
 
     return tc, X_train, X_test, y_train, y_test
 
