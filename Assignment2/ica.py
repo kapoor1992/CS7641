@@ -54,8 +54,25 @@ def run_skin():
     plt.xticks(np.arange(1, 4, 1))
     plt.show()
 
+def get_mamm():
+    tc, X_train, X_test, y_train, y_test = get_mammography_data(100)
+    sc = StandardScaler()  
+    X_train = sc.fit_transform(X_train)
+
+    ica = FastICA(n_components=9, random_state=0)  
+    X_train = ica.fit_transform(X_train)
+
+    return X_train
+
+def get_skin():
+    tc, X_train, X_test, y_train, y_test = get_skin_data(10)
+    sc = StandardScaler()  
+    X_train = sc.fit_transform(X_train)
+
+    ica = FastICA(n_components=2, random_state=0)  
+    X_train = ica.fit_transform(X_train)
+
+    return X_train
+
 warnings.filterwarnings("ignore", category=ConvergenceWarning)
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
-
-run_mamm()
-run_skin()

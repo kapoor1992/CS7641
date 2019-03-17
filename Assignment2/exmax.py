@@ -1,17 +1,12 @@
 from sklearn.mixture import GaussianMixture
 from sklearn.metrics import silhouette_samples, silhouette_score
 from utilities.data_fetcher import *
-
+import pca, ica, random_projection, factor_an
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
 
-def run(dataset):
-    if dataset == 1:
-        train_count, X, y, test_attributes, test_labels = get_mammography_data(100)
-    else:
-        train_count, X, y, test_attributes, test_labels = get_skin_data(10)
-
+def run(X):
     range_n_clusters = [2, 3, 4, 5, 6, 7]
 
     for n_clusters in range_n_clusters:
@@ -24,8 +19,8 @@ def run(dataset):
         cluster_labels = clusterer.fit_predict(X)
 
         silhouette_avg = silhouette_score(X, cluster_labels)
-        print("For n_clusters =", n_clusters,
-            "The average silhouette_score is :", silhouette_avg)
+        print("n_clusters=", n_clusters,
+            "silhouette_score=", silhouette_avg)
 
         sample_silhouette_values = silhouette_samples(X, cluster_labels)
 
@@ -44,13 +39,13 @@ def run(dataset):
                             0, ith_cluster_silhouette_values,
                             facecolor=color, edgecolor=color, alpha=0.7)
 
-            ax1.text(-0.05, y_lower + 0.5 * size_cluster_i, str(i))
+            ax1.text(-0.05, y_lower + 0.5 * size_cluster_i, str(i+1))
 
             y_lower = y_upper + 10
 
-        ax1.set_title("The silhouette plot for the various clusters.")
-        ax1.set_xlabel("The silhouette coefficient values")
-        ax1.set_ylabel("Cluster label")
+        ax1.set_title("Silhouette Plot")
+        ax1.set_xlabel("Coefficient Values")
+        ax1.set_ylabel("Cluster Label")
 
         ax1.axvline(x=silhouette_avg, color="red", linestyle="--")
 
@@ -59,5 +54,40 @@ def run(dataset):
 
     plt.show()
 
-run(1)
-run(2)
+# original clusters
+train_count, X, y, test_attributes, test_labels = get_mammography_data(100)
+run(X)
+train_count, X, y, test_attributes, test_labels = get_skin_data(10)
+run(X)
+
+# dimensionality finder and new clusters
+pca.run_mamm()
+pca.run_skin()
+X = pca.get_mamm()
+run(X)
+X = pca.get_skin()
+run(X)
+
+# dimensionality finder and new clusters
+ica.run_mamm()
+ica.run_skin()
+X = ica.get_mamm()
+run(X)
+X = ica.get_skin()
+run(X)
+
+# dimensionality finder and new clusters
+random_projection.run_mamm()
+random_projection.run_skin()
+X = random_projection.get_mamm()
+run(X)
+X = random_projection.get_skin()
+run(X)
+
+# dimensionality finder and new clusters
+factor_an.run_mamm()
+factor_an.run_skin()
+X = factor_an.get_mamm()
+run(X)
+X = factor_an.get_skin()
+run(X)
