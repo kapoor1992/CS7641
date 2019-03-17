@@ -57,33 +57,9 @@ def run(train_attributes, train_labels, test_attributes, test_labels, tp, orig=F
     plt.legend()
     plt.show()
 
-def run_mamm_orig(training_percentages):
+def run_mamm_orig(train_percentages):
     for train_percentage in train_percentages:
             train_count, train_attributes, train_labels, test_attributes, test_labels = get_mammography_data(train_percentage)
             run(train_attributes, train_labels, test_attributes, test_labels, train_percentage, orig=True)
 
 filterwarnings("ignore", category=ConvergenceWarning)
-train_percentages = [20, 40, 60, 80]
-
-#orig nn
-run_mamm_orig(train_percentages)
-
-#dimension reduced nn
-for train_percentage in train_percentages:
-    train_count, train_attributes, train_labels, test_attributes, test_labels = pca.get_mamm(train_percentage)
-    run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
-
-#dimension reduced nn
-for train_percentage in train_percentages:
-    train_count, train_attributes, train_labels, test_attributes, test_labels = ica.get_mamm(train_percentage)
-    run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
-
-#dimension reduced nn
-for train_percentage in train_percentages:
-    train_count, train_attributes, train_labels, test_attributes, test_labels = random_projection.get_mamm(train_percentage)
-    run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
-
-#dimension reduced nn
-for train_percentage in train_percentages:
-    train_count, train_attributes, train_labels, test_attributes, test_labels = factor_an.get_mamm(train_percentage)
-    run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
