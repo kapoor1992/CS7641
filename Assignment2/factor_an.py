@@ -52,15 +52,19 @@ def run_skin():
     plt.xticks(np.arange(1, 4, 1))
     plt.show()
 
-def get_mamm():
-    tc, X_train, X_test, y_train, y_test = get_mammography_data(100)
+def get_mamm(train_percentage=100):
+    tc, X_train, X_test, y_train, y_test = get_mammography_data(train_percentage)
     sc = StandardScaler()  
     X_train = sc.fit_transform(X_train)
+    y_train = sc.fit_transform(y_train)
 
     fa = FactorAnalysis(n_components=5, random_state=0)  
     X_train = fa.fit_transform(X_train)
 
-    return X_train
+    fa2 = FactorAnalysis(n_components=5, random_state=0)  
+    y_train = fa2.fit_transform(y_train)
+
+    return tc, X_train, X_test, y_train, y_test
 
 def get_skin():
     tc, X_train, X_test, y_train, y_test = get_skin_data(10)
@@ -70,6 +74,6 @@ def get_skin():
     fa = FactorAnalysis(n_components=1, random_state=0)  
     X_train = fa.fit_transform(X_train)
 
-    return X_train
+    return tc, X_train, X_test, y_train, y_test
 
 warnings.filterwarnings(action='ignore', category=DataConversionWarning)
