@@ -6,8 +6,11 @@ import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import numpy as np
 
-def run(X):
-    range_n_clusters = [2, 3, 4, 5, 6, 7]
+def run(X, clust_ct=None):
+    if clust_ct is None:
+        range_n_clusters = [2, 3, 4, 5, 6, 7]
+    else:
+        range_n_clusters = [clust_ct]
 
     for n_clusters in range_n_clusters:
         fig, ax1 = plt.subplots(1, 1)
@@ -17,6 +20,9 @@ def run(X):
 
         clusterer = GaussianMixture(n_components=n_clusters)
         cluster_labels = clusterer.fit_predict(X)
+
+        if clust_ct is not None:
+            return cluster_labels
 
         silhouette_avg = silhouette_score(X, cluster_labels)
         print("n_clusters=", n_clusters,
@@ -52,4 +58,7 @@ def run(X):
         ax1.set_yticks([])
         ax1.set_xticks([-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1])
 
-    plt.show()
+    if clust_ct is None:
+        plt.show()
+
+    return None
