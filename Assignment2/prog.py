@@ -80,7 +80,7 @@ tc, X, X_test, y_train, y_test = factor_an.get_mamm()
 exmax.run(X)
 tc, X, X_test, y_train, y_test = factor_an.get_skin()
 exmax.run(X)
-
+'''
 ## NEURAL NET STUFF
 train_percentages = [20, 40, 60, 80]
 
@@ -106,22 +106,67 @@ for train_percentage in train_percentages:
 for train_percentage in train_percentages:
     train_count, train_attributes, train_labels, test_attributes, test_labels = factor_an.get_mamm(train_percentage)
     nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
-'''
 
+
+'''
 ## REDUCED CLUSTER FINDER
 tc, X, X_test, y_train, y_test = pca.get_mamm()
 print(clusters_to_csv(kmeans.run(X, 7)))
 tc, X, X_test, y_train, y_test = ica.get_mamm()
-kmeans.run(X, 2)
+print(clusters_to_csv(kmeans.run(X, 2)))
 tc, X, X_test, y_train, y_test = random_projection.get_mamm()
-kmeans.run(X, 2)
+print(clusters_to_csv(kmeans.run(X, 2)))
 tc, X, X_test, y_train, y_test = factor_an.get_mamm()
-kmeans.run(X, 7)
+print(clusters_to_csv(kmeans.run(X, 7)))
 tc, X, X_test, y_train, y_test = pca.get_mamm()
-exmax.run(X, 7)
+print(clusters_to_csv(exmax.run(X, 7)))
 tc, X, X_test, y_train, y_test = ica.get_mamm()
-exmax.run(X, 6)
+print(clusters_to_csv(exmax.run(X, 6)))
 tc, X, X_test, y_train, y_test = random_projection.get_mamm()
-exmax.run(X, 7)
+print(clusters_to_csv(exmax.run(X, 7)))
 tc, X, X_test, y_train, y_test = factor_an.get_mamm()
-exmax.run(X, 7)
+print(clusters_to_csv(exmax.run(X, 7)))
+'''
+
+
+train_percentages = [20, 40, 60, 80]
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_kmeans_pca(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_kmeans_ica(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_kmeans_rp(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_kmeans_fa(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_exmax_pca(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_exmax_ica(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_exmax_rp(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
+
+#cluster dimension reduced nn
+for train_percentage in train_percentages:
+    train_count, train_attributes, train_labels, test_attributes, test_labels = get_exmax_fa(train_percentage)
+    nn.run(train_attributes, train_labels, test_attributes, test_labels, train_percentage)
