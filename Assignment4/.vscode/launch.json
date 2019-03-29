@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Maze",
+            "request": "launch",
+            "mainClass": "com.project.Maze",
+            "projectName": "project"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BasicBehavior",
+            "request": "launch",
+            "mainClass": "com.project.BasicBehavior",
+            "projectName": "project"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
             "mainClass": "com.project.App",

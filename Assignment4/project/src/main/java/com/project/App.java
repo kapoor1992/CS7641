@@ -1,5 +1,11 @@
 package com.project;
 
+import java.util.Random;
+
+import burlap.behavior.policy.Policy;
+import burlap.behavior.policy.PolicyUtils;
+import burlap.behavior.singleagent.planning.Planner;
+import burlap.behavior.singleagent.planning.stochastic.valueiteration.ValueIteration;
 import burlap.domain.singleagent.gridworld.GridWorldDomain;
 import burlap.domain.singleagent.gridworld.GridWorldVisualizer;
 import burlap.domain.singleagent.gridworld.state.GridAgent;
@@ -8,31 +14,43 @@ import burlap.domain.singleagent.gridworld.state.GridWorldState;
 import burlap.mdp.core.state.State;
 import burlap.mdp.singleagent.SADomain;
 import burlap.shell.visual.VisualExplorer;
+import burlap.statehashing.HashableStateFactory;
+import burlap.statehashing.simple.SimpleHashableStateFactory;
 import burlap.visualizer.Visualizer;
 
 public class App 
 {
     public static void main(String[] args) {
+			int[][] maze = getMaze(50, 1);
+			GridWorldDomain gw = new GridWorldDomain(maze);
+			gw.setProbSucceedTransitionDynamics(0.75);
+			SADomain domain = gw.generateDomain();
+			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(49, 49, "loc0"));
+			Visualizer v = GridWorldVisualizer.getVisualizer(gw.getMap());
+			VisualExplorer exp = new VisualExplorer(domain, v, s);
 
-		GridWorldDomain gw = new GridWorldDomain(11,11); //11x11 grid world
-		gw.setMapToFourRooms(); //four rooms layout
-		gw.setProbSucceedTransitionDynamics(0.8); //stochastic transitions with 0.8 success rate
-		SADomain domain = gw.generateDomain(); //generate the grid world domain
+			HashableStateFactory hashingFactory = new SimpleHashableStateFactory();
+			Planner planner = new ValueIteration(domain, 0.99, hashingFactory, 0.001, 10000);
+			Policy p = planner.planFromState(s);
 
-		//setup initial state
-		State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(10, 10, "loc0"));
+			PolicyUtils.rollout(p, s, domain.getModel());
 
-		//create visualizer and explorer
-		Visualizer v = GridWorldVisualizer.getVisualizer(gw.getMap());
-		VisualExplorer exp = new VisualExplorer(domain, v, s);
+			exp.initGUI();
+	}
 
-		//set control keys to use w-s-a-d
-		exp.addKeyAction("w", GridWorldDomain.ACTION_NORTH, "");
-		exp.addKeyAction("s", GridWorldDomain.ACTION_SOUTH, "");
-		exp.addKeyAction("a", GridWorldDomain.ACTION_WEST, "");
-		exp.addKeyAction("d", GridWorldDomain.ACTION_EAST, "");
+	public static int[][] getMaze(int size, int seed) {
+		int[][] maze = new int[size][size];
 
-		exp.initGUI();
+		Random rand = new Random(seed);
+		int val;
 
-}
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j < size; j++) {
+				val = rand.nextInt(4) < 3 ? 0 : 1;
+				maze[i][j] = val;
+			}
+		}
+
+		return maze;
+	}
 }
