@@ -38,6 +38,7 @@ import java.util.Random;
 
 public class Maze {
 	static String outputpath = "output/";
+	static int eps = 2500;
 
 	GridWorldDomain gwdg;
 	OOSADomain domain;
@@ -87,9 +88,9 @@ public class Maze {
 		new EpisodeSequenceVisualizer(v, domain, outputpath);
 	}
 
-	public void valueIterationExample(){
+	public void valueIterationExample(double discount){
 
-		Planner planner = new ValueIteration(domain, 0.99, hashingFactory, 0.001, 10000);
+		Planner planner = new ValueIteration(domain, discount, hashingFactory, Double.MIN_VALUE, 10000);
 		Policy p = planner.planFromState(initialState);
 
 		PolicyUtils.rollout(p, initialState, domain.getModel());
@@ -102,11 +103,13 @@ public class Maze {
 
 		LearningAgent agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.1);
 
-		for(int i = 0; i < 100; i++){
+		for(int i = 0; i < eps; i++){
 			Episode e = agent.runLearningEpisode(env);
 
-			e.write(outputpath + "ql_" + i);
-			System.out.println(i + ": " + e.maxTimeStep());
+			if ((i + 1) % 100 == 0) {
+				e.write(outputpath + "ql_" + i);
+				System.out.println(i + ": " + e.maxTimeStep());
+			}
 
 			//reset environment for next learning episode
 			env.resetEnvironment();
@@ -129,7 +132,8 @@ public class Maze {
 	public void experimentAndPlotter(){
 
 		//different reward function for more structured performance plots
-		//((FactoredModel)domain.getModel()).setRf(new GoalBasedRF(this.goalCondition, 1000.0, -0.1));
+		((FactoredModel)domain.getModel()).setRf(new GoalBasedRF(this.goalCondition, Math.sqrt(Math.pow(Math.sqrt(size), 2)), -0.1));
+
 
 		LearningAgentFactory qLearningFactory = new LearningAgentFactory() {
 
@@ -144,14 +148,13 @@ public class Maze {
 		};
 
 		LearningAlgorithmExperimenter exp = new LearningAlgorithmExperimenter(
-			env, 10, 100, qLearningFactory);
+			env, 1, eps, qLearningFactory);
 		exp.setUpPlottingConfiguration(500, 250, 2, 1000,
-				TrialMode.MOST_RECENT_AND_AVERAGE,
-				PerformanceMetric.CUMULATIVE_STEPS_PER_EPISODE,
+				TrialMode.MOST_RECENT_TRIAL_ONLY,
+				PerformanceMetric.CUMULATIVE_REWARD_PER_EPISODE,
 				PerformanceMetric.AVERAGE_EPISODE_REWARD);
 
 		exp.startExperiment();
-		exp.writeStepAndEpisodeDataToCSV("expData");
 
 	}
 
@@ -159,7 +162,9 @@ public class Maze {
 
 		Maze example = new Maze(10, 0, 0, 0, 9, 9);
 
-		example.valueIterationExample();
+		for (double dis = 0.1; dis < 1; dis += 0.1) {
+			example.valueIterationExample(dis);
+		}
 		example.qLearningExample();
 
 		example.experimentAndPlotter();

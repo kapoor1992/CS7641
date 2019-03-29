@@ -21,11 +21,11 @@ import burlap.visualizer.Visualizer;
 public class App 
 {
     public static void main(String[] args) {
-			int[][] maze = getMaze(50, 1);
+			int[][] maze = getMaze(10, 0);
 			GridWorldDomain gw = new GridWorldDomain(maze);
 			gw.setProbSucceedTransitionDynamics(0.75);
 			SADomain domain = gw.generateDomain();
-			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(49, 49, "loc0"));
+			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(9, 9, "loc0"));
 			Visualizer v = GridWorldVisualizer.getVisualizer(gw.getMap());
 			VisualExplorer exp = new VisualExplorer(domain, v, s);
 
