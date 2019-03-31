@@ -1,6 +1,7 @@
 package com.project;
 
 import java.util.Random;
+import java.util.Scanner;
 
 import burlap.behavior.policy.Policy;
 import burlap.behavior.policy.PolicyUtils;
@@ -20,7 +21,9 @@ import burlap.visualizer.Visualizer;
 
 public class App 
 {
+	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
+		/*
 			int[][] maze = getMaze(10, 0);
 			GridWorldDomain gw = new GridWorldDomain(maze);
 			gw.setProbSucceedTransitionDynamics(0.75);
@@ -36,6 +39,9 @@ public class App
 			PolicyUtils.rollout(p, s, domain.getModel());
 
 			exp.initGUI();
+			*/
+		
+		runMaze();
 	}
 
 	public static int[][] getMaze(int size, int seed) {
@@ -52,5 +58,13 @@ public class App
 		}
 
 		return maze;
+	}
+
+	public static void runMaze() {
+		Maze.runPolicyIteration();
+		//s.nextLine();
+		Maze.runValueIteration();
+		//s.nextLine();
+		Maze.runQLearning();
 	}
 }

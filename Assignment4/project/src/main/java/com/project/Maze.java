@@ -13,6 +13,7 @@ import burlap.behavior.singleagent.learning.LearningAgent;
 import burlap.behavior.singleagent.learning.LearningAgentFactory;
 import burlap.behavior.singleagent.learning.tdmethods.QLearning;
 import burlap.behavior.singleagent.planning.Planner;
+import burlap.behavior.singleagent.planning.stochastic.policyiteration.PolicyIteration;
 import burlap.behavior.singleagent.planning.stochastic.valueiteration.ValueIteration;
 import burlap.behavior.valuefunction.ValueFunction;
 import burlap.domain.singleagent.gridworld.GridWorldDomain;
@@ -98,6 +99,15 @@ public class Maze {
 		simpleValueFunctionVis((ValueFunction)planner, p);
 	}
 
+	public void policyIterationExample(double discount){
+
+		Planner planner = new PolicyIteration(domain, discount, hashingFactory, Double.MIN_VALUE, 10000, 10000);
+		Policy p = planner.planFromState(initialState);
+
+		PolicyUtils.rollout(p, initialState, domain.getModel());
+
+		simpleValueFunctionVis((ValueFunction)planner, p);
+	}
 
 	public void qLearningExample(){
 
@@ -125,6 +135,8 @@ public class Maze {
 			initialState, domain, hashingFactory);
 		ValueFunctionVisualizerGUI gui = GridWorldDomain.getGridWorldValueFunctionVisualization(
 			allStates, size, size, valueFunction, p);
+		
+		gui.setName("ya yee ya");
 		gui.initGUI();
 
 	}
@@ -158,13 +170,37 @@ public class Maze {
 
 	}
 
-	public static void main(String[] args) {
-
+	public static void runValueIteration() {
 		Maze example = new Maze(10, 0, 0, 0, 9, 9);
 
 		for (double dis = 0.1; dis < 1; dis += 0.1) {
 			example.valueIterationExample(dis);
 		}
+	}
+
+	public static void runPolicyIteration() {
+		Maze example = new Maze(10, 0, 0, 0, 9, 9);
+
+		for (double dis = 0.1; dis < 1; dis += 0.1) {
+			example.policyIterationExample(dis);
+		}
+	}
+
+	public static void runQLearning() {
+		Maze example = new Maze(10, 0, 0, 0, 9, 9);
+
+		example.qLearningExample();
+		example.experimentAndPlotter();
+		example.visualize();
+	}
+
+	public static void main(String[] args) {
+		Maze example = new Maze(10, 0, 0, 0, 9, 9);
+
+		for (double dis = 0.1; dis < 1; dis += 0.1) {
+			example.valueIterationExample(dis);
+		}
+
 		example.qLearningExample();
 
 		example.experimentAndPlotter();
