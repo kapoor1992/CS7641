@@ -1,5 +1,7 @@
 package com.project;
 
+import burlap.behavior.learningrate.ExponentialDecayLR;
+import burlap.behavior.learningrate.LearningRate;
 import burlap.behavior.policy.Policy;
 import burlap.behavior.policy.PolicyUtils;
 import burlap.behavior.singleagent.Episode;
@@ -112,14 +114,16 @@ public class Maze {
 		simpleValueFunctionVis((ValueFunction)planner, p);
 	}
 
-	public void qLearningExample(double discount, int eps){
+	public void qLearningExample(double discount, int eps, boolean exDecay){
 
-		LearningAgent agent = new QLearning(domain, discount, hashingFactory, 0, 0.1);
+		QLearning agent = new QLearning(domain, discount, hashingFactory, 0, 0.1);
+		if (exDecay)
+			agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 
 		for(int i = 0; i < eps; i++){
 			Episode e = agent.runLearningEpisode(env);
 
-			if ((i + 1) % 100 == 0) {
+			if (i == 0 || (i + 1) % 10 == 0) {
 				e.write(outputpath + "ql_" + i);
 				System.out.println(i + ": " + e.maxTimeStep());
 			}
@@ -143,13 +147,18 @@ public class Maze {
 
 	}
 
-	public void experimentAndPlotter(double discount, int eps){
+	public void experimentAndPlotter(double discount, int eps, boolean exDecay){
 
 		//different reward function for more structured performance plots
 		((FactoredModel)domain.getModel()).setRf(new GoalBasedRF(this.goalCondition, Math.sqrt(Math.pow(Math.sqrt(size), 2)), -0.1));
 
+		LearningAgentFactory qLearningFactory;
 
-		LearningAgentFactory qLearningFactory = GetLAF(discount);
+		if (exDecay) {
+			qLearningFactory = GetLAFDecay(discount);
+		} else {
+			qLearningFactory = GetLAF(discount);
+		}
 		
 		LearningAlgorithmExperimenter exp = new LearningAlgorithmExperimenter(
 			env, 1, eps, qLearningFactory);
@@ -164,6 +173,82 @@ public class Maze {
 
 		exp.startExperiment();
 
+	}
+
+	public LearningAgentFactory GetLAFDecay(double discount) {
+		if (discount < 0.91) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					QLearning agent = new QLearning(domain, 0.90, hashingFactory, 0, 0.1);
+					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					return agent;
+				}
+			};
+		}
+		if (discount < 0.93) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					QLearning agent = new QLearning(domain, 0.925, hashingFactory, 0, 0.1);
+					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					return agent;
+				}
+			};
+		}
+		if (discount < 0.96) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					QLearning agent = new QLearning(domain, 0.95, hashingFactory, 0, 0.1);
+					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					return agent;
+				}
+			};
+		}
+		if (discount < 0.98) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					QLearning agent = new QLearning(domain, 0.975, hashingFactory, 0, 0.1);
+					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					return agent;
+				}
+			};
+		}
+		return new LearningAgentFactory() {
+				
+			public String getAgentName() {
+				return "Q-Learning";
+			}
+
+
+			public LearningAgent generateAgent() {
+				QLearning agent = new QLearning(domain, 1, hashingFactory, 0, 0.1);
+				agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+				return agent;
+			}
+		};
 	}
 
 	public LearningAgentFactory GetLAF(double discount) {
@@ -244,10 +329,10 @@ public class Maze {
 		}
 	}
 
-	public static void runQLearning(Maze example, int eps) {
+	public static void runQLearning(Maze example, int eps, boolean exDecay) {
 		for (double dis = 0.90; dis <= 1; dis += 0.025) {
-			example.qLearningExample(dis, eps);
-			example.experimentAndPlotter(dis, eps);
+			example.qLearningExample(dis, eps, exDecay);
+			example.experimentAndPlotter(dis, eps, exDecay);
 			example.visualize();
 		}
 	}

@@ -63,7 +63,9 @@ public class App
 		//s.nextLine();
 		Maze.runValueIteration(example);
 		//s.nextLine();
-		Maze.runQLearning(example, 200);
+		Maze.runQLearning(example, 200, false);
+		//s.nextLine();
+		Maze.runQLearning(example, 200, true);
 	}
 
 	public static void runMaze() {
@@ -73,6 +75,8 @@ public class App
 		//s.nextLine();
 		//Maze.runValueIteration(example);
 		//s.nextLine();
-		Maze.runQLearning(example, 1500);
+		//Maze.runQLearning(example, 1500, false);
+		//s.nextLine();
+		Maze.runQLearning(example, 50, true);
 	}
 }
