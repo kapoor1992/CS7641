@@ -39,7 +39,6 @@ import java.util.Random;
 
 public class Maze {
 	static String outputpath = "output/";
-	static int eps = 2500;
 
 	GridWorldDomain gwdg;
 	OOSADomain domain;
@@ -50,9 +49,9 @@ public class Maze {
 	SimulatedEnvironment env;
 	int size;
 
-	public Maze(int size, int seed, int startx, int starty, int goalx, int goaly){
+	public Maze(int size, int seed, int startx, int starty, int goalx, int goaly, boolean shouldWall){
 		this.size = size;
-		int[][] maze = getMaze(size, seed);
+		int[][] maze = getMaze(size, seed, shouldWall);
 		gwdg = new GridWorldDomain(maze);
 		gwdg.setProbSucceedTransitionDynamics(0.75);
 		tf = new GridWorldTerminalFunction(goalx, goaly);
@@ -67,7 +66,7 @@ public class Maze {
 		env = new SimulatedEnvironment(domain, initialState);
 	}
 
-	public int[][] getMaze(int size, int seed) {
+	public int[][] getMaze(int size, int seed, boolean shouldWall) {
 		int[][] maze = new int[size][size];
 
 		Random rand = new Random(seed);
@@ -77,7 +76,11 @@ public class Maze {
 		for (int i = 0; i < size; i++) {
 			for (int j = 0; j < size; j++) {
 				val = rand.nextInt(4) < 3 ? 0 : 1;
-				maze[i][j] = val;
+
+				if (!shouldWall)
+					maze[i][j] = 0;
+				else
+					maze[i][j] = val;
 			}
 		}
 
@@ -109,9 +112,9 @@ public class Maze {
 		simpleValueFunctionVis((ValueFunction)planner, p);
 	}
 
-	public void qLearningExample(){
+	public void qLearningExample(double discount, int eps){
 
-		LearningAgent agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.1);
+		LearningAgent agent = new QLearning(domain, discount, hashingFactory, 0, 0.1);
 
 		for(int i = 0; i < eps; i++){
 			Episode e = agent.runLearningEpisode(env);
@@ -136,77 +139,116 @@ public class Maze {
 		ValueFunctionVisualizerGUI gui = GridWorldDomain.getGridWorldValueFunctionVisualization(
 			allStates, size, size, valueFunction, p);
 		
-		gui.setName("ya yee ya");
 		gui.initGUI();
 
 	}
 
-	public void experimentAndPlotter(){
+	public void experimentAndPlotter(double discount, int eps){
 
 		//different reward function for more structured performance plots
 		((FactoredModel)domain.getModel()).setRf(new GoalBasedRF(this.goalCondition, Math.sqrt(Math.pow(Math.sqrt(size), 2)), -0.1));
 
 
-		LearningAgentFactory qLearningFactory = new LearningAgentFactory() {
+		LearningAgentFactory qLearningFactory = GetLAF(discount);
+		
+		LearningAlgorithmExperimenter exp = new LearningAlgorithmExperimenter(
+			env, 1, eps, qLearningFactory);
+		exp.setUpPlottingConfiguration(500, 250, 2, 1000,
+				TrialMode.MOST_RECENT_TRIAL_ONLY,
+				PerformanceMetric.CUMULATIVE_REWARD_PER_EPISODE,
+				PerformanceMetric.AVERAGE_EPISODE_REWARD,
+				PerformanceMetric.CUMULATIVE_REWARD_PER_STEP,
+				PerformanceMetric.CUMULATIVE_STEPS_PER_EPISODE,
+				PerformanceMetric.MEDIAN_EPISODE_REWARD,
+				PerformanceMetric.STEPS_PER_EPISODE);
 
+		exp.startExperiment();
+
+	}
+
+	public LearningAgentFactory GetLAF(double discount) {
+		if (discount < 0.91) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					return new QLearning(domain, 0.90, hashingFactory, 0, 0.1);
+				}
+			};
+		}
+		if (discount < 0.93) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					return new QLearning(domain, 0.925, hashingFactory, 0, 0.1);
+				}
+			};
+		}
+		if (discount < 0.96) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					return new QLearning(domain, 0.95, hashingFactory, 0, 0.1);
+				}
+			};
+		}
+		if (discount < 0.98) {
+			return new LearningAgentFactory() {
+				
+				public String getAgentName() {
+					return "Q-Learning";
+				}
+
+
+				public LearningAgent generateAgent() {
+					return new QLearning(domain, 0.975, hashingFactory, 0, 0.1);
+				}
+			};
+		}
+		return new LearningAgentFactory() {
+				
 			public String getAgentName() {
 				return "Q-Learning";
 			}
 
 
 			public LearningAgent generateAgent() {
-				return new QLearning(domain, 0.99, hashingFactory, 0, 0.1);
+				return new QLearning(domain, 1, hashingFactory, 0, 0.1);
 			}
 		};
-
-		LearningAlgorithmExperimenter exp = new LearningAlgorithmExperimenter(
-			env, 1, eps, qLearningFactory);
-		exp.setUpPlottingConfiguration(500, 250, 2, 1000,
-				TrialMode.MOST_RECENT_TRIAL_ONLY,
-				PerformanceMetric.CUMULATIVE_REWARD_PER_EPISODE,
-				PerformanceMetric.AVERAGE_EPISODE_REWARD);
-
-		exp.startExperiment();
-
 	}
 
-	public static void runValueIteration() {
-		Maze example = new Maze(10, 0, 0, 0, 9, 9);
-
-		for (double dis = 0.1; dis < 1; dis += 0.1) {
+	public static void runValueIteration(Maze example) {
+		for (double dis = 0.90; dis <= 1; dis += 0.025) {
 			example.valueIterationExample(dis);
 		}
 	}
 
-	public static void runPolicyIteration() {
-		Maze example = new Maze(10, 0, 0, 0, 9, 9);
-
-		for (double dis = 0.1; dis < 1; dis += 0.1) {
+	public static void runPolicyIteration(Maze example) {
+		for (double dis = 0.90; dis <= 1; dis += 0.025) {
 			example.policyIterationExample(dis);
 		}
 	}
 
-	public static void runQLearning() {
-		Maze example = new Maze(10, 0, 0, 0, 9, 9);
-
-		example.qLearningExample();
-		example.experimentAndPlotter();
-		example.visualize();
-	}
-
-	public static void main(String[] args) {
-		Maze example = new Maze(10, 0, 0, 0, 9, 9);
-
-		for (double dis = 0.1; dis < 1; dis += 0.1) {
-			example.valueIterationExample(dis);
+	public static void runQLearning(Maze example, int eps) {
+		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+			example.qLearningExample(dis, eps);
+			example.experimentAndPlotter(dis, eps);
+			example.visualize();
 		}
-
-		example.qLearningExample();
-
-		example.experimentAndPlotter();
-
-		example.visualize();
-
 	}
-
 }

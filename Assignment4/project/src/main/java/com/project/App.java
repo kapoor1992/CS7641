@@ -24,24 +24,20 @@ public class App
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
 		/*
-			int[][] maze = getMaze(10, 0);
+			int[][] maze = getMaze(20, 3);
 			GridWorldDomain gw = new GridWorldDomain(maze);
 			gw.setProbSucceedTransitionDynamics(0.75);
 			SADomain domain = gw.generateDomain();
-			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(9, 9, "loc0"));
+			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(19, 19, "loc0"));
 			Visualizer v = GridWorldVisualizer.getVisualizer(gw.getMap());
 			VisualExplorer exp = new VisualExplorer(domain, v, s);
 
-			HashableStateFactory hashingFactory = new SimpleHashableStateFactory();
-			Planner planner = new ValueIteration(domain, 0.99, hashingFactory, 0.001, 10000);
-			Policy p = planner.planFromState(s);
-
-			PolicyUtils.rollout(p, s, domain.getModel());
 
 			exp.initGUI();
 			*/
 		
-		runMaze();
+			//runNonMaze();
+			runMaze();
 	}
 
 	public static int[][] getMaze(int size, int seed) {
@@ -60,11 +56,23 @@ public class App
 		return maze;
 	}
 
+	public static void runNonMaze() {
+		Maze example = new Maze(5, 0, 0, 0, 4, 4, false);
+
+		Maze.runPolicyIteration(example);
+		//s.nextLine();
+		Maze.runValueIteration(example);
+		//s.nextLine();
+		Maze.runQLearning(example, 200);
+	}
+
 	public static void runMaze() {
-		Maze.runPolicyIteration();
+		Maze example = new Maze(20, 3, 0, 0, 19, 19, true);
+
+		//Maze.runPolicyIteration(example);
 		//s.nextLine();
-		Maze.runValueIteration();
+		//Maze.runValueIteration(example);
 		//s.nextLine();
-		Maze.runQLearning();
+		Maze.runQLearning(example, 1500);
 	}
 }
