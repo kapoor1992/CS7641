@@ -38,6 +38,7 @@ import burlap.visualizer.Visualizer;
 
 import java.util.List;
 import java.util.Random;
+import java.util.Timer;
 
 public class Maze {
 	static String outputpath = "output/";
@@ -323,10 +324,20 @@ public class Maze {
 		}
 	}
 
-	public static void runPolicyIteration(Maze example) {
+	public static long[] runPolicyIteration(Maze example) {
+		long[] times = new long[5];
+		long start, end;
+		int i = 0;
+		
 		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+			start = System.currentTimeMillis();
 			example.policyIterationExample(dis);
+			end = System.currentTimeMillis();
+			times[i] = end - start;
+			i++;
 		}
+
+		return times;
 	}
 
 	public static void runQLearning(Maze example, int eps, boolean exDecay) {

@@ -36,8 +36,8 @@ public class App
 			exp.initGUI();
 			*/
 		
-			//runNonMaze();
-			runMaze();
+			runNonMaze();
+			//runMaze();
 	}
 
 	public static int[][] getMaze(int size, int seed) {
@@ -59,13 +59,17 @@ public class App
 	public static void runNonMaze() {
 		Maze example = new Maze(5, 0, 0, 0, 4, 4, false);
 
-		Maze.runPolicyIteration(example);
+		long[] pi = Maze.runPolicyIteration(example);
 		//s.nextLine();
 		Maze.runValueIteration(example);
 		//s.nextLine();
 		Maze.runQLearning(example, 200, false);
 		//s.nextLine();
 		Maze.runQLearning(example, 200, true);
+
+		for (int i = 0; i < pi.length; i++) {
+			System.out.println(pi[i]);
+		}
 	}
 
 	public static void runMaze() {

@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Block",
+            "request": "launch",
+            "mainClass": "com.project.Block",
+            "projectName": "project"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Car",
+            "request": "launch",
+            "mainClass": "com.project.Car",
+            "projectName": "project"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Maze",
             "request": "launch",
             "mainClass": "com.project.Maze",
