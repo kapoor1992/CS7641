@@ -61,26 +61,56 @@ public class App
 
 		long[] pi = Maze.runPolicyIteration(example);
 		//s.nextLine();
-		Maze.runValueIteration(example);
+		long[] vi = Maze.runValueIteration(example);
 		//s.nextLine();
-		Maze.runQLearning(example, 200, false);
+		long[] qc = Maze.runQLearning(example, 200, false);
 		//s.nextLine();
-		Maze.runQLearning(example, 200, true);
+		long[] qd = Maze.runQLearning(example, 200, true);
 
-		for (int i = 0; i < pi.length; i++) {
-			System.out.println(pi[i]);
-		}
+		System.out.println("non-maze times");
+		printTimes(pi, vi, qc, qd);
 	}
 
 	public static void runMaze() {
 		Maze example = new Maze(20, 3, 0, 0, 19, 19, true);
 
-		//Maze.runPolicyIteration(example);
+		long[] pi = Maze.runPolicyIteration(example);
 		//s.nextLine();
-		//Maze.runValueIteration(example);
+		long[] vi = Maze.runValueIteration(example);
 		//s.nextLine();
-		//Maze.runQLearning(example, 1500, false);
+		long[] qc = Maze.runQLearning(example, 1500, false);
 		//s.nextLine();
-		Maze.runQLearning(example, 50, true);
+		long[] qd = Maze.runQLearning(example, 50, true);
+
+		System.out.println("maze times");
+		printTimes(pi, vi, qc, qd);
+	}
+
+	public static void printTimes(long[] pi, long[] vi, long[] qc, long[] qd) {
+		System.out.println("discounts: 0.9 0.925 0.95 0.975 1");
+
+		System.out.print("policy iteration times: ");
+		for (int i = 0; i < pi.length; i++) {
+			System.out.print(pi[i] + " ");
+		}
+		System.out.println();
+
+		System.out.print("value iteration times: ");
+		for (int i = 0; i < vi.length; i++) {
+			System.out.print(vi[i] + " ");
+		}
+		System.out.println();
+
+		System.out.print("q learning constant learning rate times: ");
+		for (int i = 0; i < qc.length; i++) {
+			System.out.print(qc[i] + " ");
+		}
+		System.out.println();
+
+		System.out.print("q learning exponential decay learning rate times: ");
+		for (int i = 0; i < qd.length; i++) {
+			System.out.print(qd[i] + " ");
+		}
+		System.out.println();
 	}
 }

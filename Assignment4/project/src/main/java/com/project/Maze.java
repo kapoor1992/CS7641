@@ -318,10 +318,20 @@ public class Maze {
 		};
 	}
 
-	public static void runValueIteration(Maze example) {
+	public static long[] runValueIteration(Maze example) {
+		long[] times = new long[5];
+		long start, end;
+		int i = 0;
+
 		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+			start = System.currentTimeMillis();
 			example.valueIterationExample(dis);
+			end = System.currentTimeMillis();
+			times[i] = end - start;
+			i++;
 		}
+
+		return times;
 	}
 
 	public static long[] runPolicyIteration(Maze example) {
@@ -340,11 +350,21 @@ public class Maze {
 		return times;
 	}
 
-	public static void runQLearning(Maze example, int eps, boolean exDecay) {
+	public static long[] runQLearning(Maze example, int eps, boolean exDecay) {
+		long[] times = new long[5];
+		long start, end;
+		int i = 0;
+
 		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+			start = System.currentTimeMillis();
 			example.qLearningExample(dis, eps, exDecay);
+			end = System.currentTimeMillis();
 			example.experimentAndPlotter(dis, eps, exDecay);
 			example.visualize();
+			times[i] = end - start;
+			i++;
 		}
+
+		return times;
 	}
 }
