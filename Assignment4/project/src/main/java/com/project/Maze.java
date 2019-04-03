@@ -115,14 +115,14 @@ public class Maze {
 
 	public void qLearningExample(double discount, int eps, boolean exDecay, String outputpath){
 
-		QLearning agent = new QLearning(domain, discount, hashingFactory, 0, 0.1);
+		QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, discount, 250000);
 		if (exDecay)
 			agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 
 		for(int i = 0; i < eps; i++){
 			Episode e = agent.runLearningEpisode(env);
 
-			if (i == 0 || (i + 1) % 10 == 0) {
+			if (i == 0 || i == eps - 1) {
 				e.write(outputpath + "ql_" + i);
 				System.out.println(i + ": " + e.maxTimeStep());
 			}
@@ -162,7 +162,7 @@ public class Maze {
 		LearningAlgorithmExperimenter exp = new LearningAlgorithmExperimenter(
 			env, 1, eps, qLearningFactory);
 		exp.setUpPlottingConfiguration(500, 250, 2, 1000,
-				TrialMode.MOST_RECENT_TRIAL_ONLY,
+				TrialMode.MOST_RECENT_AND_AVERAGE,
 				PerformanceMetric.CUMULATIVE_REWARD_PER_EPISODE,
 				PerformanceMetric.AVERAGE_EPISODE_REWARD,
 				PerformanceMetric.CUMULATIVE_REWARD_PER_STEP,
@@ -175,7 +175,7 @@ public class Maze {
 	}
 
 	public LearningAgentFactory GetLAFDecay(double discount) {
-		if (discount < 0.91) {
+		if (discount < 0.2) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -184,13 +184,13 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					QLearning agent = new QLearning(domain, 0.90, hashingFactory, 0, 0.1);
+					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.1, 250000);
 					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 					return agent;
 				}
 			};
 		}
-		if (discount < 0.93) {
+		if (discount < 0.4) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -199,13 +199,13 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					QLearning agent = new QLearning(domain, 0.925, hashingFactory, 0, 0.1);
+					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.3, 250000);
 					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 					return agent;
 				}
 			};
 		}
-		if (discount < 0.96) {
+		if (discount < 0.6) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -214,13 +214,13 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					QLearning agent = new QLearning(domain, 0.95, hashingFactory, 0, 0.1);
+					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.5, 250000);
 					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 					return agent;
 				}
 			};
 		}
-		if (discount < 0.98) {
+		if (discount < 0.8) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -229,7 +229,7 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					QLearning agent = new QLearning(domain, 0.975, hashingFactory, 0, 0.1);
+					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.7, 250000);
 					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 					return agent;
 				}
@@ -243,7 +243,7 @@ public class Maze {
 
 
 			public LearningAgent generateAgent() {
-				QLearning agent = new QLearning(domain, 1, hashingFactory, 0, 0.1);
+				QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.9, 250000);
 				agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
 				return agent;
 			}
@@ -251,7 +251,7 @@ public class Maze {
 	}
 
 	public LearningAgentFactory GetLAF(double discount) {
-		if (discount < 0.91) {
+		if (discount < 0.2) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -260,11 +260,11 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					return new QLearning(domain, 0.90, hashingFactory, 0, 0.1);
+					return new QLearning(domain, 0.99, hashingFactory, 0, 0.1, 250000);
 				}
 			};
 		}
-		if (discount < 0.93) {
+		if (discount < 0.4) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -273,11 +273,11 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					return new QLearning(domain, 0.925, hashingFactory, 0, 0.1);
+					return new QLearning(domain, 0.99, hashingFactory, 0, 0.3, 250000);
 				}
 			};
 		}
-		if (discount < 0.96) {
+		if (discount < 0.6) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -286,11 +286,11 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					return new QLearning(domain, 0.95, hashingFactory, 0, 0.1);
+					return new QLearning(domain, 0.99, hashingFactory, 0, 0.5, 250000);
 				}
 			};
 		}
-		if (discount < 0.98) {
+		if (discount < 0.8) {
 			return new LearningAgentFactory() {
 				
 				public String getAgentName() {
@@ -299,7 +299,7 @@ public class Maze {
 
 
 				public LearningAgent generateAgent() {
-					return new QLearning(domain, 0.975, hashingFactory, 0, 0.1);
+					return new QLearning(domain, 0.99, hashingFactory, 0, 0.7, 250000);
 				}
 			};
 		}
@@ -311,7 +311,7 @@ public class Maze {
 
 
 			public LearningAgent generateAgent() {
-				return new QLearning(domain, 1, hashingFactory, 0, 0.1);
+				return new QLearning(domain, 0.99, hashingFactory, 0, 0.9, 250000);
 			}
 		};
 	}
@@ -348,21 +348,17 @@ public class Maze {
 		return times;
 	}
 
-	public static long[] runQLearning(Maze example, int eps, boolean exDecay, String outputpath) {
-		long[] times = new long[5];
+	public static long runQLearning(Maze example, int eps, boolean exDecay, String outputpath, double lr) {
+		long time;
 		long start, end;
-		int i = 0;
 
-		for (double dis = 0.90; dis < 1; dis += 0.025) {
-			start = System.currentTimeMillis();
-			example.qLearningExample(dis, eps, exDecay, outputpath);
-			end = System.currentTimeMillis();
-			example.experimentAndPlotter(dis, eps, exDecay);
-			example.visualize(outputpath);
-			times[i] = end - start;
-			i++;
-		}
+		start = System.currentTimeMillis();
+		example.qLearningExample(lr, eps, exDecay, outputpath);
+		end = System.currentTimeMillis();
+		example.experimentAndPlotter(lr, eps, exDecay);
+		example.visualize(outputpath);
+		time = end - start;
 
-		return times;
+		return time;
 	}
 }
