@@ -1,0 +1,2088 @@
+!!burlap.behavior.singleagent.Episode
+actionSequence:
+- &id001 !!burlap.mdp.core.action.SimpleAction {name: east}
+- &id002 !!burlap.mdp.core.action.SimpleAction {name: north}
+- *id001
+- *id002
+- &id003 !!burlap.mdp.core.action.SimpleAction {name: west}
+- *id003
+- *id002
+- *id001
+- &id004 !!burlap.mdp.core.action.SimpleAction {name: south}
+- *id002
+- *id002
+- *id002
+- *id002
+- *id002
+- *id002
+- *id001
+- *id002
+- *id004
+- *id001
+- *id001
+- *id004
+- *id004
+- *id002
+- *id001
+- *id001
+- *id002
+- *id001
+- *id002
+- *id003
+- *id001
+- *id004
+- *id002
+- *id002
+- *id001
+- *id003
+- *id004
+- *id002
+- *id001
+- *id002
+- *id004
+- *id003
+- *id002
+- *id002
+- *id001
+- *id004
+- *id003
+- *id002
+- *id004
+- *id003
+- *id003
+- *id001
+- *id001
+- *id001
+- *id002
+- *id003
+- *id004
+- *id002
+- *id002
+- *id002
+- *id003
+- *id003
+- *id002
+- *id003
+- *id003
+- *id002
+- *id003
+- *id002
+- *id002
+- *id001
+- *id002
+- *id001
+- *id004
+- *id003
+- *id004
+- *id003
+- *id004
+- *id001
+- *id004
+- *id004
+- *id002
+- *id003
+- *id004
+- *id003
+- *id002
+- *id002
+- *id002
+- *id002
+- *id003
+- *id001
+- *id002
+- *id002
+- *id003
+- *id001
+- *id001
+- *id001
+- *id004
+- *id002
+- *id003
+- *id003
+- *id004
+- *id002
+- *id001
+- *id001
+- *id001
+- *id004
+- *id001
+- *id004
+- *id002
+- *id004
+- *id003
+- *id001
+- *id003
+- *id004
+- *id004
+- *id004
+- *id001
+- *id002
+- *id001
+- *id002
+- *id002
+- *id003
+- *id003
+- *id002
+- *id004
+- *id004
+- *id001
+- *id003
+- *id004
+- *id002
+- *id001
+- *id004
+- *id001
+- *id004
+- *id002
+- *id001
+- *id001
+- *id002
+- *id004
+- *id003
+- *id003
+- *id002
+- *id003
+- *id002
+- *id001
+- *id003
+- *id002
+- *id001
+- *id002
+- *id003
+- *id001
+- *id002
+- *id004
+- *id002
+- *id002
+- *id002
+- *id003
+- *id001
+- *id004
+- *id002
+- *id001
+- *id002
+- *id001
+- *id003
+- *id003
+- *id001
+- *id004
+- *id004
+- *id004
+- *id001
+- *id001
+- *id002
+- *id004
+- *id001
+- *id001
+- *id004
+- *id002
+- *id003
+- *id004
+- *id001
+- *id002
+- *id003
+- *id003
+- *id003
+- *id003
+- *id004
+- *id002
+- *id001
+- *id001
+- *id002
+- *id002
+- *id002
+- *id003
+- *id002
+- *id001
+- *id001
+- *id002
+- *id004
+- *id002
+- *id001
+- *id001
+- *id003
+- *id004
+- *id001
+- *id001
+- *id004
+- *id002
+- *id002
+- *id001
+- *id002
+- *id002
+- *id003
+- *id003
+- *id004
+- *id001
+- *id004
+- *id001
+- *id002
+- *id002
+- *id003
+- *id002
+- *id003
+- *id003
+- *id002
+- *id004
+- *id004
+- *id003
+- *id001
+- *id001
+- *id001
+- *id003
+- *id002
+- *id001
+- *id001
+- *id002
+- *id002
+- *id001
+- *id002
+- *id002
+- *id003
+- *id004
+- *id004
+- *id001
+- *id002
+- *id003
+- *id003
+- *id003
+- *id002
+- *id002
+- *id001
+- *id003
+- *id004
+- *id002
+- *id001
+- *id004
+- *id002
+- *id001
+- *id003
+- *id001
+- *id004
+- *id001
+- *id003
+- *id002
+- *id001
+- *id002
+- *id004
+- *id003
+- *id002
+- *id001
+- *id004
+- *id001
+- *id003
+- *id002
+- *id002
+- *id001
+- *id001
+- *id004
+- *id001
+- *id004
+- *id002
+- *id001
+- *id001
+- *id004
+- *id003
+- *id002
+- *id002
+- *id001
+- *id004
+- *id002
+- *id003
+- *id002
+- *id001
+- *id003
+- *id004
+- *id001
+- *id001
+- *id002
+- *id001
+- *id002
+- *id004
+- *id004
+- *id001
+- *id001
+- *id004
+- *id002
+- *id002
+- *id002
+- *id003
+- *id003
+- *id001
+- *id002
+- *id002
+- *id004
+- *id001
+- *id004
+- *id003
+- *id004
+- *id003
+- *id003
+- *id002
+- *id002
+- *id001
+- *id004
+- *id001
+- *id003
+- *id004
+- *id003
+- *id001
+- *id001
+- *id002
+- *id003
+- *id002
+- *id004
+- *id004
+- *id004
+- *id001
+- *id004
+- *id001
+- *id001
+- *id001
+- *id003
+- *id004
+- *id001
+- *id003
+- *id002
+- *id001
+- *id003
+- *id001
+- *id002
+- *id003
+- *id002
+- *id001
+- *id002
+- *id001
+- *id004
+- *id001
+- *id004
+- *id004
+- *id003
+- *id004
+- *id002
+- *id001
+- *id002
+- *id003
+- *id003
+- *id004
+- *id002
+- *id004
+- *id003
+- *id003
+- *id004
+- *id002
+- *id002
+- *id001
+- *id003
+- *id003
+- *id001
+- *id001
+- *id001
+- *id003
+- *id001
+- *id004
+- *id002
+- *id002
+- *id003
+- *id002
+- *id001
+- *id003
+- *id001
+- *id001
+- *id003
+- *id004
+- *id003
+- *id004
+- *id001
+- *id001
+- *id003
+- *id004
+- *id003
+- *id002
+- *id004
+- *id002
+- *id003
+- *id003
+- *id004
+- *id003
+- *id004
+- *id002
+- *id001
+- *id002
+- *id001
+- *id003
+- *id004
+- *id002
+- *id002
+- *id004
+- *id001
+- *id001
+- *id003
+- *id004
+- *id001
+- *id002
+- *id001
+- *id001
+- *id002
+- *id001
+- *id001
+- *id004
+- *id001
+- *id004
+- *id002
+- *id002
+- *id002
+- *id004
+- *id001
+- *id001
+- *id004
+- *id002
+- *id004
+- *id001
+- *id003
+- *id003
+- *id001
+- *id001
+- *id004
+- *id004
+- *id002
+- *id001
+- *id004
+- *id002
+- *id002
+- *id002
+- *id001
+- *id001
+- *id001
+- *id002
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id004
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id004
+- *id004
+- *id004
+- *id001
+- *id003
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id002
+- *id002
+- *id002
+- *id002
+- *id002
+- *id001
+- *id002
+- *id002
+- *id001
+- *id001
+- *id002
+- *id001
+- *id001
+- *id001
+- *id001
+- *id001
+- *id002
+- *id001
+- *id002
+- *id002
+- *id001
+- *id001
+- *id003
+- *id002
+- *id002
+- *id002
+- *id001
+- *id002
+- *id001
+- *id001
+rewardSequence: [-0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1,
+  -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, -0.1, 7.0710678118654755]
+stateSequence:
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 0}
+  locations: &id005
+  - {name: loc0, type: 0, x: 0, y: 0}
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 0}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 1}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 1}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 2}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 2}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 2}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 2}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 2}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 2}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 3}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 3}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 4}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 5}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 6}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 6}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 6}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 6}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 5}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 4}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 5}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 5}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 6}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 8}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 8}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 8}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 8}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 8}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 7}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 8}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 9}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 9}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 9}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 9}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 9}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 9}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 10}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 0, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 1, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 2, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 3, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 4, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 6, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 5, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 6, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 11}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 12}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 13}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 14}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 15}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 6, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 6, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 9, y: 16}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 9, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 9, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 19}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 7, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 8, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 9, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 10, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 9, y: 17}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 9, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 10, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 18}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 19}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 19}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 20}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 21}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 10, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 10, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 11, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 22}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 12, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 24}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 24}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 24}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 23}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 24}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 25}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 25}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 26}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 26}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 26}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 27}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 27}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 27}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 27}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 28}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 29}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 30}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 30}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 31}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 30}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 29}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 29}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 30}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 29}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 30}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 31}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 32}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 32}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 32}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 35}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 35}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 13, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 35}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 36}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 14, y: 36}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 36}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 35}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 15, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 16, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 33}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 34}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 35}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 35}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 36}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 36}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 37}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 37}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 37}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 20, y: 37}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 20, y: 38}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 38}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 38}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 37}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 38}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 20, y: 38}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 20, y: 39}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 39}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 39}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 39}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 39}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 39}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 40}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 17, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 18, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 41}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 19, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 20, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 21, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 21, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 21, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 21, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 22, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 21, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 20, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 21, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 22, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 22, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 22, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 22, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 23, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 23, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 23, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 23, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 23, y: 45}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 24, y: 45}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 25, y: 45}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 26, y: 45}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 26, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 27, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 28, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 29, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 30, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 30, y: 45}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 30, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 31, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 31, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 32, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 33, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 34, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 35, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 36, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 36, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 36, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 36, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 37, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 36, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 37, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 38, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 39, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 40, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 41, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 40, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 41, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 42, y: 42}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 42, y: 43}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 42, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 42, y: 44}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 42, y: 45}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 42, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 43, y: 46}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 43, y: 47}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 43, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 43, y: 47}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 44, y: 47}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 44, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 45, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 44, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 45, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 46, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 46, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 49}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 49}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 48, y: 49}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 48, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 47}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 49}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 48}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 47, y: 49}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 48, y: 49}
+  locations: *id005
+- !!burlap.domain.singleagent.gridworld.state.GridWorldState
+  agent: {name: agent, x: 49, y: 49}
+  locations: *id005
