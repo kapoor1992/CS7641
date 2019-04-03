@@ -24,11 +24,11 @@ public class App
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
 		/*
-			int[][] maze = getMaze(20, 3);
+			int[][] maze = getMaze(50, 1);
 			GridWorldDomain gw = new GridWorldDomain(maze);
 			gw.setProbSucceedTransitionDynamics(0.75);
 			SADomain domain = gw.generateDomain();
-			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(19, 19, "loc0"));
+			State s = new GridWorldState(new GridAgent(0, 0), new GridLocation(49, 49, "loc0"));
 			Visualizer v = GridWorldVisualizer.getVisualizer(gw.getMap());
 			VisualExplorer exp = new VisualExplorer(domain, v, s);
 
@@ -36,8 +36,8 @@ public class App
 			exp.initGUI();
 			*/
 		
-			runNonMaze();
-			//runMaze();
+			//runNonMaze();
+			runMaze();
 	}
 
 	public static int[][] getMaze(int size, int seed) {
@@ -63,31 +63,32 @@ public class App
 		//s.nextLine();
 		long[] vi = Maze.runValueIteration(example);
 		//s.nextLine();
-		long[] qc = Maze.runQLearning(example, 200, false);
+		long[] qc = Maze.runQLearning(example, 200, false, "output_qc_nm/");
 		//s.nextLine();
-		long[] qd = Maze.runQLearning(example, 200, true);
+		long[] qd = Maze.runQLearning(example, 200, true, "output_qd_nm/");
 
 		System.out.println("non-maze times");
 		printTimes(pi, vi, qc, qd);
 	}
 
 	public static void runMaze() {
-		Maze example = new Maze(20, 3, 0, 0, 19, 19, true);
+		//Maze example = new Maze(20, 3, 0, 0, 19, 19, true);
+		Maze example = new Maze(50, 1, 0, 0, 49, 49, true);
 
-		long[] pi = Maze.runPolicyIteration(example);
+		//long[] pi = Maze.runPolicyIteration(example);
 		//s.nextLine();
-		long[] vi = Maze.runValueIteration(example);
+		//long[] vi = Maze.runValueIteration(example);
 		//s.nextLine();
-		long[] qc = Maze.runQLearning(example, 1500, false);
+		long[] qc = Maze.runQLearning(example, 1500, false, "output_qc_m/");
 		//s.nextLine();
-		long[] qd = Maze.runQLearning(example, 50, true);
+		long[] qd = Maze.runQLearning(example, 50, true, "output_qd_m/");
 
 		System.out.println("maze times");
-		printTimes(pi, vi, qc, qd);
+		//printTimes(pi, vi, qc, qd);
 	}
 
 	public static void printTimes(long[] pi, long[] vi, long[] qc, long[] qd) {
-		System.out.println("discounts: 0.9 0.925 0.95 0.975 1");
+		System.out.println("discounts: 0.9 0.925 0.95 0.975");
 
 		System.out.print("policy iteration times: ");
 		for (int i = 0; i < pi.length; i++) {

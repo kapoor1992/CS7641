@@ -41,8 +41,6 @@ import java.util.Random;
 import java.util.Timer;
 
 public class Maze {
-	static String outputpath = "output/";
-
 	GridWorldDomain gwdg;
 	OOSADomain domain;
 	TerminalFunction tf;
@@ -90,7 +88,7 @@ public class Maze {
 		return maze;
 	}
 
-	public void visualize(){
+	public void visualize(String outputpath){
 		Visualizer v = GridWorldVisualizer.getVisualizer(gwdg.getMap());
 		new EpisodeSequenceVisualizer(v, domain, outputpath);
 	}
@@ -115,7 +113,7 @@ public class Maze {
 		simpleValueFunctionVis((ValueFunction)planner, p);
 	}
 
-	public void qLearningExample(double discount, int eps, boolean exDecay){
+	public void qLearningExample(double discount, int eps, boolean exDecay, String outputpath){
 
 		QLearning agent = new QLearning(domain, discount, hashingFactory, 0, 0.1);
 		if (exDecay)
@@ -323,7 +321,7 @@ public class Maze {
 		long start, end;
 		int i = 0;
 
-		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+		for (double dis = 0.90; dis < 1; dis += 0.025) {
 			start = System.currentTimeMillis();
 			example.valueIterationExample(dis);
 			end = System.currentTimeMillis();
@@ -339,7 +337,7 @@ public class Maze {
 		long start, end;
 		int i = 0;
 		
-		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+		for (double dis = 0.90; dis < 1; dis += 0.025) {
 			start = System.currentTimeMillis();
 			example.policyIterationExample(dis);
 			end = System.currentTimeMillis();
@@ -350,17 +348,17 @@ public class Maze {
 		return times;
 	}
 
-	public static long[] runQLearning(Maze example, int eps, boolean exDecay) {
+	public static long[] runQLearning(Maze example, int eps, boolean exDecay, String outputpath) {
 		long[] times = new long[5];
 		long start, end;
 		int i = 0;
 
-		for (double dis = 0.90; dis <= 1; dis += 0.025) {
+		for (double dis = 0.90; dis < 1; dis += 0.025) {
 			start = System.currentTimeMillis();
-			example.qLearningExample(dis, eps, exDecay);
+			example.qLearningExample(dis, eps, exDecay, outputpath);
 			end = System.currentTimeMillis();
 			example.experimentAndPlotter(dis, eps, exDecay);
-			example.visualize();
+			example.visualize(outputpath);
 			times[i] = end - start;
 			i++;
 		}
