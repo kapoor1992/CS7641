@@ -60,6 +60,7 @@ public class Maze {
 		goalCondition = new TFGoalCondition(tf);
 		domain = gwdg.generateDomain();
 		((FactoredModel)domain.getModel()).setRf(new GoalBasedRF(this.goalCondition, Math.sqrt(Math.pow(Math.sqrt(size), 2)), -0.1));
+		//((FactoredModel)domain.getModel()).setRf(new GoalBasedRF(this.goalCondition, 1856, -1));
 
 		initialState = new GridWorldState(new GridAgent(startx, starty), new GridLocation(startx, starty, "loc0"));
 		hashingFactory = new SimpleHashableStateFactory();
@@ -122,7 +123,7 @@ public class Maze {
 		for(int i = 0; i < eps; i++){
 			Episode e = agent.runLearningEpisode(env);
 
-			if (i == 0 || i == eps - 1) {
+			if ((i == 0) || ((i + 1) % 100 == 0)) {
 				e.write(outputpath + "ql_" + i);
 				System.out.println(i + ": " + e.maxTimeStep());
 			}
@@ -163,11 +164,7 @@ public class Maze {
 			env, 1, eps, qLearningFactory);
 		exp.setUpPlottingConfiguration(500, 250, 2, 1000,
 				TrialMode.MOST_RECENT_AND_AVERAGE,
-				PerformanceMetric.CUMULATIVE_REWARD_PER_EPISODE,
 				PerformanceMetric.AVERAGE_EPISODE_REWARD,
-				PerformanceMetric.CUMULATIVE_REWARD_PER_STEP,
-				PerformanceMetric.CUMULATIVE_STEPS_PER_EPISODE,
-				PerformanceMetric.MEDIAN_EPISODE_REWARD,
 				PerformanceMetric.STEPS_PER_EPISODE);
 
 		exp.startExperiment();

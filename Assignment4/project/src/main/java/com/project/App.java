@@ -23,8 +23,33 @@ public class App
 {
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-		/*
-			int[][] maze = getMaze(50, 1);
+			runNonMaze();
+			//runNonMaze(false, 200, "out0.1qcn/", 0.1);
+			//runNonMaze(false, 200, "out0.3qcn/", 0.3);
+			//runNonMaze(false, 200, "out0.5qcn/", 0.5);
+			//runNonMaze(false, 200, "out0.7qcn/", 0.7);
+			//runNonMaze(false, 200, "out0.9qcn/", 0.9);
+			//runNonMaze(true, 200, "out0.1qdn/", 0.1);
+			//runNonMaze(true, 200, "out0.3qdn/", 0.3);
+			//runNonMaze(true, 200, "out0.5qdn/", 0.5);
+			//runNonMaze(true, 200, "out0.7qdn/", 0.7);
+			//runNonMaze(true, 200, "out0.9qdn/", 0.9);
+
+			//runMaze();
+			//runMaze(false, 1000, "out0.1qc/", 0.1);
+			//runMaze(false, 1000, "out0.3qc/", 0.3);
+			//runMaze(false, 1000, "out0.5qc/", 0.5);
+			//runMaze(false, 1000, "out0.7qc/", 0.7);
+			//runMaze(false, 1000, "out0.9qc/", 0.9);
+			//runMaze(true, 1000, "out0.1qd/", 0.1);
+			//runMaze(true, 1000, "out0.3qd/", 0.3);
+			//runMaze(true, 1000, "out0.5qd/", 0.5);
+			//runMaze(true, 1000, "out0.7qd/", 0.7);
+			//runMaze(true, 1500, "out0.9qd/", 0.9);
+	}
+
+	public void mazeFinder() {
+		int[][] maze = getMaze(50, 1);
 			GridWorldDomain gw = new GridWorldDomain(maze);
 			gw.setProbSucceedTransitionDynamics(0.75);
 			SADomain domain = gw.generateDomain();
@@ -32,36 +57,7 @@ public class App
 			Visualizer v = GridWorldVisualizer.getVisualizer(gw.getMap());
 			VisualExplorer exp = new VisualExplorer(domain, v, s);
 
-
 			exp.initGUI();
-			*/
-		/*
-			runNonMaze();
-			runNonMaze(false, 200, "out0.1qcn/", 0.1);
-			runNonMaze(false, 200, "out0.3qcn/", 0.3);
-			runNonMaze(false, 200, "out0.5qcn/", 0.5);
-			runNonMaze(false, 200, "out0.7qcn/", 0.7);
-			runNonMaze(false, 200, "out0.9qcn/", 0.9);
-			runNonMaze(true, 200, "out0.1qdn/", 0.1);
-			runNonMaze(true, 200, "out0.3qdn/", 0.3);
-			runNonMaze(true, 200, "out0.5qdn/", 0.5);
-			runNonMaze(true, 200, "out0.7qdn/", 0.7);
-			runNonMaze(true, 200, "out0.9qdn/", 0.9);
-
-			runMaze();
-			runMaze(false, 1500, "out0.1qc/", 0.1);
-			runMaze(false, 1500, "out0.3qc/", 0.3);
-			runMaze(false, 1500, "out0.5qc/", 0.5);
-			runMaze(false, 1500, "out0.7qc/", 0.7);
-			*/
-			runMaze(false, 1500, "out0.9qc/", 0.9);
-			/*
-			runMaze(true, 50, "out0.1qd/", 0.1);
-			runMaze(true, 50, "out0.3qd/", 0.3);
-			runMaze(true, 50, "out0.5qd/", 0.5);
-			runMaze(true, 50, "out0.7qd/", 0.7);
-			runMaze(true, 50, "out0.9qd/", 0.9);
-			*/
 	}
 
 	public static int[][] getMaze(int size, int seed) {
