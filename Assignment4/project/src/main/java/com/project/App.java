@@ -23,7 +23,7 @@ public class App
 {
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-			//runNonMaze();
+			runNonMaze();
 			//runNonMaze(false, 200, "out0.1qcn/", 0.1);
 			//runNonMaze(false, 200, "out0.3qcn/", 0.3);
 			//runNonMaze(false, 200, "out0.5qcn/", 0.5);
@@ -45,7 +45,7 @@ public class App
 			//runMaze(true, 1000, "out0.3qd/", 0.3);			// 273693
 			//runMaze(true, 1000, "out0.5qd/", 0.5);			// 252561
 			//runMaze(true, 1000, "out0.7qd/", 0.7);			// 326312
-			runMaze(true, 1000, "out0.9qd/", 0.9);				// 278636
+			//runMaze(true, 1000, "out0.9qd/", 0.9);				// 278636
 	}
 
 	public void mazeFinder() {
