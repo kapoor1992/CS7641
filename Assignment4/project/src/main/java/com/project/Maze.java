@@ -10,7 +10,6 @@ import burlap.behavior.singleagent.auxiliary.StateReachability;
 import burlap.behavior.singleagent.auxiliary.performance.LearningAlgorithmExperimenter;
 import burlap.behavior.singleagent.auxiliary.performance.PerformanceMetric;
 import burlap.behavior.singleagent.auxiliary.performance.TrialMode;
-import burlap.behavior.singleagent.auxiliary.valuefunctionvis.ValueFunctionVisualizerGUI;
 import burlap.behavior.singleagent.learning.LearningAgent;
 import burlap.behavior.singleagent.learning.LearningAgentFactory;
 import burlap.behavior.singleagent.learning.tdmethods.QLearning;
@@ -18,7 +17,6 @@ import burlap.behavior.singleagent.planning.Planner;
 import burlap.behavior.singleagent.planning.stochastic.policyiteration.PolicyIteration;
 import burlap.behavior.singleagent.planning.stochastic.valueiteration.ValueIteration;
 import burlap.behavior.valuefunction.ValueFunction;
-import burlap.domain.singleagent.gridworld.GridWorldDomain;
 import burlap.domain.singleagent.gridworld.GridWorldTerminalFunction;
 import burlap.domain.singleagent.gridworld.GridWorldVisualizer;
 import burlap.domain.singleagent.gridworld.state.GridAgent;
@@ -138,8 +136,7 @@ public class Maze {
 
 	public void simpleValueFunctionVis(ValueFunction valueFunction, Policy p){
 
-		List<State> allStates = StateReachability.getReachableStates(
-			initialState, domain, hashingFactory);
+		List<State> allStates = StateReachability.getReachableStates(initialState, domain, hashingFactory);
 		ValueFunctionVisualizerGUI gui = GridWorldDomain.getGridWorldValueFunctionVisualization(
 			allStates, size, size, valueFunction, p);
 		
@@ -350,10 +347,10 @@ public class Maze {
 		long start, end;
 
 		start = System.currentTimeMillis();
-		example.qLearningExample(lr, eps, exDecay, outputpath);
+		//example.qLearningExample(lr, eps, exDecay, outputpath);
 		end = System.currentTimeMillis();
 		example.experimentAndPlotter(lr, eps, exDecay);
-		example.visualize(outputpath);
+		//example.visualize(outputpath);
 		time = end - start;
 
 		return time;

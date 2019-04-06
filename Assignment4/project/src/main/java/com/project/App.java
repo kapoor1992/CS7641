@@ -23,7 +23,7 @@ public class App
 {
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-			runNonMaze();
+			//runNonMaze();
 			//runNonMaze(false, 200, "out0.1qcn/", 0.1);
 			//runNonMaze(false, 200, "out0.3qcn/", 0.3);
 			//runNonMaze(false, 200, "out0.5qcn/", 0.5);
@@ -36,16 +36,16 @@ public class App
 			//runNonMaze(true, 200, "out0.9qdn/", 0.9);
 
 			//runMaze();
-			//runMaze(false, 1000, "out0.1qc/", 0.1);
-			//runMaze(false, 1000, "out0.3qc/", 0.3);
-			//runMaze(false, 1000, "out0.5qc/", 0.5);
-			//runMaze(false, 1000, "out0.7qc/", 0.7);
-			//runMaze(false, 1000, "out0.9qc/", 0.9);
-			//runMaze(true, 1000, "out0.1qd/", 0.1);
-			//runMaze(true, 1000, "out0.3qd/", 0.3);
-			//runMaze(true, 1000, "out0.5qd/", 0.5);
-			//runMaze(true, 1000, "out0.7qd/", 0.7);
-			//runMaze(true, 1500, "out0.9qd/", 0.9);
+			//runMaze(false, 1000, "out0.1qc/", 0.1);		// 14852
+			//runMaze(false, 1000, "out0.3qc/", 0.3);			// 7797
+			//runMaze(false, 1000, "out0.5qc/", 0.5);				// 10532
+			//runMaze(false, 1000, "out0.7qc/", 0.7);			// 6738
+			//runMaze(false, 1000, "out0.9qc/", 0.9);			// 6658
+			//runMaze(true, 1000, "out0.1qd/", 0.1);			// 250452
+			//runMaze(true, 1000, "out0.3qd/", 0.3);			// 273693
+			//runMaze(true, 1000, "out0.5qd/", 0.5);			// 252561
+			//runMaze(true, 1000, "out0.7qd/", 0.7);			// 326312
+			runMaze(true, 1000, "out0.9qd/", 0.9);				// 278636
 	}
 
 	public void mazeFinder() {
