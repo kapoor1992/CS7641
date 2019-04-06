@@ -38,6 +38,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Timer;
 
+import javax.swing.JCheckBox;
+
 public class Maze {
 	GridWorldDomain gwdg;
 	OOSADomain domain;
@@ -139,7 +141,7 @@ public class Maze {
 		List<State> allStates = StateReachability.getReachableStates(initialState, domain, hashingFactory);
 		ValueFunctionVisualizerGUI gui = GridWorldDomain.getGridWorldValueFunctionVisualization(
 			allStates, size, size, valueFunction, p);
-		
+			gui.pLayer.setSpp(gui.spp);
 		gui.initGUI();
 
 	}
@@ -315,7 +317,7 @@ public class Maze {
 		long start, end;
 		int i = 0;
 
-		for (double dis = 0.90; dis < 1; dis += 0.025) {
+		for (double dis = 0.91; dis < 1; dis += 0.02) {
 			start = System.currentTimeMillis();
 			example.valueIterationExample(dis);
 			end = System.currentTimeMillis();
@@ -331,7 +333,7 @@ public class Maze {
 		long start, end;
 		int i = 0;
 		
-		for (double dis = 0.90; dis < 1; dis += 0.025) {
+		for (double dis = 0.91; dis < 1; dis += 0.02) {
 			start = System.currentTimeMillis();
 			example.policyIterationExample(dis);
 			end = System.currentTimeMillis();

@@ -2,11 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # non-maze
-x_vals = [0.9, 0.925, 0.95, 0.975, 1]
-y_vals_pi = [4679, 376, 550, 1270, 2563]
-y_vals_vi = [226, 262, 327, 276, 217]
-y_vals_qc = [1099, 545, 274, 358, 304]
-y_vals_qd = [1051, 2205, 822, 419, 750]
+x_vals = [0.91, 0.93, 0.95, 0.97, 0.99]
+y_vals_pi = [3651, 456, 552, 375, 497]
+y_vals_vi = [119, 119, 134, 116, 79]
 
 plt.title('Non-Maze Running Times')
 plt.xlabel('Discount Rate')
@@ -14,8 +12,23 @@ plt.ylabel('Time (ms)')
 
 plt.plot(x_vals, y_vals_pi, label='Policy Iteration')
 plt.plot(x_vals, y_vals_vi, label='Value Iteration')
-plt.plot(x_vals, y_vals_qc, label='Q-Learning Constant Rate')
-plt.plot(x_vals, y_vals_qd, label='Q-Learning Exponential Decay Rate')
+
+plt.xticks(x_vals)
+
+plt.legend()
+plt.show()
+
+# non-maze q-learning
+x_vals = [0.1, 0.3, 0.5, 0.7, 0.9]
+y_vals_qc = [431, 470, 473, 412, 412]
+y_vals_qd = [572, 889, 635, 541, 796]
+
+plt.title('Non-Maze Q-Learning Running Times')
+plt.xlabel('Learning Rate')
+plt.ylabel('Time (ms)')
+
+plt.plot(x_vals, y_vals_qc, label='Constant Rate')
+plt.plot(x_vals, y_vals_qd, label='Exponential Decay Rate')
 
 plt.xticks(x_vals)
 
@@ -23,11 +36,9 @@ plt.legend()
 plt.show()
 
 # maze
-x_vals = [0.9, 0.925, 0.95, 0.975, 1]
-y_vals_pi = [5421, 3099, 3867, 6050, 54009]
-y_vals_vi = [410, 452, 486, 553, 517]
-y_vals_qc = [4251, 3359, 2569, 3262, 2295]
-y_vals_qd = [2437, 7179, 15360, 4255, 3342]
+x_vals = [0.91, 0.93, 0.95, 0.97, 0.99]
+y_vals_pi = [46081, 37416, 51892, 54266, 114345]
+y_vals_vi = [4157, 4236, 4514, 4720, 5213]
 
 plt.title('Maze Running Times')
 plt.xlabel('Discount Rate')
@@ -35,8 +46,23 @@ plt.ylabel('Time (ms)')
 
 plt.plot(x_vals, y_vals_pi, label='Policy Iteration')
 plt.plot(x_vals, y_vals_vi, label='Value Iteration')
-plt.plot(x_vals, y_vals_qc, label='Q-Learning Constant Rate')
-plt.plot(x_vals, y_vals_qd, label='Q-Learning Exponential Decay Rate')
+
+plt.xticks(x_vals)
+
+plt.legend()
+plt.show()
+
+# maze q-learning
+x_vals = [0.1, 0.3, 0.5, 0.7, 0.9]
+y_vals_qc = [14852, 7797, 10532, 6738, 6658]
+y_vals_qd = [250452, 273693, 252561, 326312, 278636]
+
+plt.title('Maze Q-Learning Running Times')
+plt.xlabel('Learning Rate')
+plt.ylabel('Time (ms)')
+
+plt.plot(x_vals, y_vals_qc, label='Constant Rate')
+plt.plot(x_vals, y_vals_qd, label='Exponential Decay Rate')
 
 plt.xticks(x_vals)
 

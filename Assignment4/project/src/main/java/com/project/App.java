@@ -23,17 +23,17 @@ public class App
 {
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-			runNonMaze();
-			//runNonMaze(false, 200, "out0.1qcn/", 0.1);
-			//runNonMaze(false, 200, "out0.3qcn/", 0.3);
-			//runNonMaze(false, 200, "out0.5qcn/", 0.5);
-			//runNonMaze(false, 200, "out0.7qcn/", 0.7);
-			//runNonMaze(false, 200, "out0.9qcn/", 0.9);
-			//runNonMaze(true, 200, "out0.1qdn/", 0.1);
-			//runNonMaze(true, 200, "out0.3qdn/", 0.3);
-			//runNonMaze(true, 200, "out0.5qdn/", 0.5);
-			//runNonMaze(true, 200, "out0.7qdn/", 0.7);
-			//runNonMaze(true, 200, "out0.9qdn/", 0.9);
+			//runNonMaze();
+			//runNonMaze(false, 200, "out0.1qcn/", 0.1);		// 431
+			//runNonMaze(false, 200, "out0.3qcn/", 0.3);			// 470
+			//runNonMaze(false, 200, "out0.5qcn/", 0.5);		// 473
+			//runNonMaze(false, 200, "out0.7qcn/", 0.7);		// 412
+			//runNonMaze(false, 200, "out0.9qcn/", 0.9);		// 412
+			//runNonMaze(true, 200, "out0.1qdn/", 0.1);		// 572
+			//runNonMaze(true, 200, "out0.3qdn/", 0.3);		// 889
+			runNonMaze(true, 200, "out0.5qdn/", 0.5);	// 635
+			//runNonMaze(true, 200, "out0.7qdn/", 0.7);	// 541
+			//runNonMaze(true, 200, "out0.9qdn/", 0.9);		// 796
 
 			//runMaze();
 			//runMaze(false, 1000, "out0.1qc/", 0.1);		// 14852
@@ -118,7 +118,7 @@ public class App
 	}
 
 	public static void printTimes(long[] pi, long[] vi) {
-		System.out.println("discounts: 0.1 0.3 0.5 0.7 0.9");
+		System.out.println("discounts: 0.91 0.93 0.95 0.97 0.99");
 
 		System.out.print("policy iteration times: ");
 		for (int i = 0; i < pi.length; i++) {

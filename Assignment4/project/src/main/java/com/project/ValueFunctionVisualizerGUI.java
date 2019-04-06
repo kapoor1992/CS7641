@@ -7,6 +7,7 @@ import burlap.behavior.singleagent.auxiliary.valuefunctionvis.StateValuePainter;
 import burlap.behavior.singleagent.auxiliary.valuefunctionvis.StaticDomainPainter;
 import burlap.behavior.singleagent.auxiliary.valuefunctionvis.ValueFunctionRenderLayer;
 import burlap.behavior.singleagent.auxiliary.valuefunctionvis.common.ArrowActionGlyph;
+import burlap.behavior.singleagent.auxiliary.valuefunctionvis.common.LandmarkColorBlendInterpolation;
 import burlap.behavior.singleagent.auxiliary.valuefunctionvis.common.PolicyGlyphPainter2D;
 import burlap.behavior.singleagent.auxiliary.valuefunctionvis.common.StateValuePainter2D;
 import burlap.behavior.valuefunction.ValueFunction;
@@ -44,7 +45,7 @@ public class ValueFunctionVisualizerGUI extends JFrame implements ItemListener {
 	/**
 	 * The policy renderer
 	 */
-	protected PolicyRenderLayer					pLayer;
+	public PolicyRenderLayer					pLayer;
 	
 	/**
 	 * Painter used to visualize the value function
@@ -54,7 +55,7 @@ public class ValueFunctionVisualizerGUI extends JFrame implements ItemListener {
 	/**
 	 * Painter used to visualize the policy
 	 */
-	protected StatePolicyPainter				spp = null;
+	public StatePolicyPainter				spp = null;
 	
 	
 	protected List <State>						statesToVisualize;
@@ -117,8 +118,14 @@ public class ValueFunctionVisualizerGUI extends JFrame implements ItemListener {
 																 String eastActionName,
 																 String westActionName){
 
-
-		StateValuePainter2D svp = new StateValuePainter2D();
+		LandmarkColorBlendInterpolation rb = new LandmarkColorBlendInterpolation();
+		rb.addNextLandMark(-1, Color.WHITE);
+		rb.addNextLandMark(-0.1, Color.YELLOW);
+		rb.addNextLandMark(1, Color.RED);
+		//rb.addNextLandMark(-2, Color.WHITE);
+		//rb.addNextLandMark(-1, Color.YELLOW);
+		//rb.addNextLandMark(1, Color.RED);
+		StateValuePainter2D svp = new StateValuePainter2D(rb);
 		svp.setXYKeys(xVar, yVar, xRange, yRange, xWidth, yWidth);
 
 
@@ -245,7 +252,7 @@ public class ValueFunctionVisualizerGUI extends JFrame implements ItemListener {
 		if(this.spp == null){
 			this.showPolicy.setEnabled(false);
 		}
-		
+
 		controlContainer.add(this.showPolicy, BorderLayout.WEST);
 		
 		this.getContentPane().add(controlContainer, BorderLayout.SOUTH);
