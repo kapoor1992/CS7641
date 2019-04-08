@@ -118,7 +118,7 @@ public class Maze {
 
 		QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, discount, 250000);
 		if (exDecay)
-			agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+			agent.setLearningRateFunction(new ExponentialDecayLR(discount, 0.001));
 
 		for(int i = 0; i < eps; i++){
 			Episode e = agent.runLearningEpisode(env);
@@ -181,7 +181,7 @@ public class Maze {
 
 				public LearningAgent generateAgent() {
 					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.1, 250000);
-					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					agent.setLearningRateFunction(new ExponentialDecayLR(0.1, 0.001));
 					return agent;
 				}
 			};
@@ -196,7 +196,7 @@ public class Maze {
 
 				public LearningAgent generateAgent() {
 					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.3, 250000);
-					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					agent.setLearningRateFunction(new ExponentialDecayLR(0.3, 0.001));
 					return agent;
 				}
 			};
@@ -211,7 +211,7 @@ public class Maze {
 
 				public LearningAgent generateAgent() {
 					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.5, 250000);
-					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					agent.setLearningRateFunction(new ExponentialDecayLR(0.5, 0.001));
 					return agent;
 				}
 			};
@@ -226,7 +226,7 @@ public class Maze {
 
 				public LearningAgent generateAgent() {
 					QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.7, 250000);
-					agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+					agent.setLearningRateFunction(new ExponentialDecayLR(0.7, 0.001));
 					return agent;
 				}
 			};
@@ -240,7 +240,7 @@ public class Maze {
 
 			public LearningAgent generateAgent() {
 				QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0, 0.9, 250000);
-				agent.setLearningRateFunction(new ExponentialDecayLR(1, 0.001));
+				agent.setLearningRateFunction(new ExponentialDecayLR(0.9, 0.001));
 				return agent;
 			}
 		};
