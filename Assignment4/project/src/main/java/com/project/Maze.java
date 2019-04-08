@@ -352,7 +352,7 @@ public class Maze {
 		example.qLearningExample(lr, eps, exDecay, outputpath);
 		end = System.currentTimeMillis();
 		example.experimentAndPlotter(lr, eps, exDecay);
-		example.visualize(outputpath);
+		//example.visualize(outputpath);
 		time = end - start;
 
 		return time;

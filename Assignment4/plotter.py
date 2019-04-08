@@ -37,8 +37,8 @@ plt.show()
 
 # non-maze q-learning
 x_vals = [0.1, 0.3, 0.5, 0.7, 0.9]
-y_vals_qc = [431, 470, 473, 412, 412]
-y_vals_qd = [572, 889, 635, 541, 796]
+y_vals_qc = [891, 694, 691, 723, 704]
+y_vals_qd = [1643, 1320, 1449, 1240, 1539]
 
 plt.title('Non-Maze Q-Learning Running Times')
 plt.xlabel('Learning Rate')

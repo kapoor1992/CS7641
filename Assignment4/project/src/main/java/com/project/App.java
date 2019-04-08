@@ -23,17 +23,17 @@ public class App
 {
 	static Scanner s = new Scanner(System.in);
     public static void main(String[] args) {
-			runNonMaze();		// 4, 4, 6, 5, 6     48, 49, 53, 56, 57
-			//runNonMaze(false, 200, "out0.1qcn/", 0.1);		// 431
-			//runNonMaze(false, 200, "out0.3qcn/", 0.3);			// 470
-			//runNonMaze(false, 200, "out0.5qcn/", 0.5);		// 473
-			//runNonMaze(false, 200, "out0.7qcn/", 0.7);		// 412
-			//runNonMaze(false, 200, "out0.9qcn/", 0.9);		// 412
-			//runNonMaze(true, 200, "out0.1qdn/", 0.1);		// 572
-			//runNonMaze(true, 200, "out0.3qdn/", 0.3);		// 889
-			//runNonMaze(true, 200, "out0.5qdn/", 0.5);	// 635
-			//runNonMaze(true, 200, "out0.7qdn/", 0.7);	// 541
-			//runNonMaze(true, 200, "out0.9qdn/", 0.9);		// 796
+			//runNonMaze();		// 4, 4, 6, 5, 6     48, 49, 53, 56, 57
+			//runNonMaze(false, 1000, "out0.1qcn/", 0.1);		// 891
+			//runNonMaze(false, 1000, "out0.3qcn/", 0.3);			// 694
+			//runNonMaze(false, 1000, "out0.5qcn/", 0.5);		// 691
+			//runNonMaze(false, 1000, "out0.7qcn/", 0.7);		// 723
+			//runNonMaze(false, 1000, "out0.9qcn/", 0.9);		// 704
+			//runNonMaze(true, 1000, "out0.1qdn/", 0.1);		// 1643
+			//runNonMaze(true, 1000, "out0.3qdn/", 0.3);		// 1320
+			//runNonMaze(true, 1000, "out0.5qdn/", 0.5);	// 1449
+			runNonMaze(true, 1000, "out0.7qdn/", 0.7);	// 1240
+			//runNonMaze(true, 1000, "out0.9qdn/", 0.9);		// 1539
 
 			//runMaze();		// 8, 8, 7, 8, 9       135, 140, 150, 158, 169
 			//runMaze(false, 1000, "out0.1qc/", 0.1);		// 14852
